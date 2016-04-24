@@ -46,6 +46,13 @@ else if (strcmp($password, $password2) !== 0) {
 else {
 	if (strlen($password) < 8)				$error = true;
 	else if (strpos($password, " "))		$error = true;
+	else {
+		//check if handle exists already
+		$query = "select count(*) from users where user_handle='" . $handle . "'";
+		$result = mysqli_query($conn, $query);
+
+		if ($result > 0)						$error = true;
+	}
 }
 
 if ($error) {
@@ -57,11 +64,15 @@ if ($error) {
 		. $name[0] . "','" . $name[count($name)-1] . "','" . $handle . "','" . md5($password) . "')";
 
 	if (mysqli_query($conn, $query)) {
+		//success
 		echo $query . " success!";
 	} else {
+		//not successful
 		echo $query . " unsuccessful";
 	}
 }
 
 mysqli_close($conn);
+header('Location: ../index.php');
+exit();
 ?>
