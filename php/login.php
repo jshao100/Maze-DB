@@ -17,7 +17,7 @@ $password = $_POST['password'];
 
 $error = false;
 
-if(!isset($name) || !isset($handle)) {
+if(!isset($username) || !isset($password)) {
 	$error = true;
 }
 $query = "select * from users where user_handle='" . $username . "' and user_pass='" . md5($password) . "'";
