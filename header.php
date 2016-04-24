@@ -26,7 +26,7 @@
 <?php
 if (isset($_COOKIE["handle"])) {
 	echo "<li><a href='#'>".$_COOKIE["handle"]."'s Mazes</a></li>";
-	echo "<li><a class='button' href='./logout.php'>Logout</a></li>";
+	echo "<li><a class='button' href='./php/logout.php'>Logout</a></li>";
 } else {
 	echo '<li><a class="button" href="./login.php">Login/Sign Up</a></li>';
 }
