@@ -30,7 +30,7 @@ else if (strcmp($password, $password2) != 0)						$error = true;
 //password checks
 else {
 	if (strlen($password) < 8)				$error = true;
-	else if (strpos($password, " ")		$error = true;
+	else if (strpos($password, " "))		$error = true;
 }
 
 if ($error) {
