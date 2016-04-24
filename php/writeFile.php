@@ -1,4 +1,8 @@
 <?php
+
+echo "on writeFile\n";
+
+/*
 $host = "us-cdbr-iron-east-03.cleardb.net";
 $port = "3306";
 $user = "b9a1b6108596e9";
@@ -55,4 +59,5 @@ if(mysqli_query($conn, $query)) {
 mysqli_close($conn);
 header('Location: http://maze.mybluemix.net');
 exit();
+ */
 ?>
