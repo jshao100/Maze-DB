@@ -48,10 +48,11 @@ else {
 	else if (strpos($password, " "))		$error = true;
 	else {
 		//check if handle exists already
-		$query = "select count(*) from users where user_handle='" . $handle . "'";
+		$query = "select * from users where user_handle='" . $handle . "'";
 		$result = mysqli_query($conn, $query);
 
-		if ($result > 0)						$error = true;
+		if (mysqli_num_rows($result) > 0)
+			$error = true;
 	}
 }
 
