@@ -1,5 +1,5 @@
 <?php
-//setcookie("handle", $_COOKIE['handle'], time() - 3600);
-unset($_COOKIE['handle']);
+$value = $_COOKIE['handle'];
+setcookie('handle', $value, time() - 3600, '/');
 header('Location: ../index.php');
 ?>
