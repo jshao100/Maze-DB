@@ -1,20 +1,11 @@
 //var fs = require("fs");
 
 $('#save-maze').click(function() {
-	/*
-	var fileName = "../mazes/test.txt";
-	
-	fs.writeFile('fileName', 'Hello World!', function (err) {
-		  if (err) return console.log(err);
-		    console.log('Hello World > helloworld.txt');
-	});
-	*/
-/*
-	file.open("w");
-
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
-	
+
+	var array = new Array(rows.length);
+
 	var i;
 	var j;
 	var str;
@@ -28,9 +19,14 @@ $('#save-maze').click(function() {
 			else if (!("red").localeCompare((cols[j]).style.backgroundColor))		str += "E";
 			else																						str += "?";
 		}
-		file.writeln(str);
-	}	
-	file.close();
-	alert("finished saving");
-*/
+		array[i] = str;
+	}
+
+	var json_arr = JSON.stringify(udxNewOrder);
+
+	$.ajax({
+			type: 'POST',
+			url: '../php/writeFile.php',
+			data: json_arr
+	})
 });
