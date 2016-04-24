@@ -29,4 +29,6 @@ $('#save-maze').click(function() {
 			url: '../php/writeFile.php',
 			data: {saveData: json_arr}
 	})
+
+	window.location = "http://maze.bluemix.net/";
 });
