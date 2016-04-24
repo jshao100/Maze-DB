@@ -29,7 +29,12 @@ if (mysqli_num_rows($result) > 0) {
 	exit();
 }
 
-$query = "INSERT INTO mazes (maze_name, maze_author) VALUES ('" . $name . "','" . $_COOKIE['handle'] . "')";
+$query = "select user_id from users where user_name = '" . $_COOKIE['handle'] . "'";
+$result1 = mysqli_query($conn, $query);
+$res1 = mysqli_fetch_array($result1, MYSQLI_NUM);
+$user_id = $res1[0];
+
+$query = "INSERT INTO mazes (maze_name, maze_author) VALUES ('" . $name . "','" . $user_id . "')";
 if(mysqli_query($conn, $query)) {
 	$query = "SELECT maze_id FROM mazes WHERE maze_name = '" . $name . "'";
 	$result = mysqli_query($conn, $query);
