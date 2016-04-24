@@ -67,7 +67,6 @@ if ($error) {
 	if (mysqli_query($conn, $query)) {
 		//success
 		echo $query . " success!";
-		setcookie("handle",$handle, time()+3600); //set cookie handle
 	} else {
 		//not successful
 		echo $query . " unsuccessful";
@@ -75,6 +74,9 @@ if ($error) {
 }
 
 mysqli_close($conn);
-header('Location: ../index.php');
-exit();
+setcookie("handle", $_POST["handle"], time()+3600); //set cookie handle
+echo "cookie pls ";
+echo $_COOKIE["handle"];
+//header('Location: ../index.php');
+//exit();
 ?>
