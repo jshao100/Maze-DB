@@ -19,6 +19,12 @@ $handle = $_POST['handle'];
 $password = $_POST['password'];
 $password2 = $_POST['password'];
 
+echo $name;
+echo $handle;
+echo $password;
+echo $password2;
+echo "vars done printing";
+/*
 $error = false;
 
 //null input
@@ -47,6 +53,7 @@ if ($error) {
 		echo $query . " unsuccessful";
 	}
 }
+ */
 
 mysqli_close($conn);
 ?>
