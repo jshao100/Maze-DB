@@ -22,7 +22,7 @@ $('#save-maze').click(function() {
 		array[i] = str;
 	}
 
-	var json_arr = JSON.stringify(udxNewOrder);
+	var json_arr = JSON.stringify(array);
 
 	$.ajax({
 			type: 'POST',
