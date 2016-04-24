@@ -17,7 +17,7 @@ echo "Connected successfully";
 $name = explode(" ", $_POST['name']); //split on space
 $handle = $_POST['handle'];
 $password = $_POST['password'];
-$password2 = $_POST['password'];
+$password2 = $_POST['password2'];
 /*
 echo $name[0];
 echo $name[1];
@@ -58,7 +58,7 @@ else {
 
 if ($error) {
 	mysqli_close($conn);
-	header('Location: ../create.php');
+	header('Location: ../login.php');
 	exit();
 } else {
 	$query = "INSERT INTO users (user_first, user_last, user_handle, user_pass) VALUES ('"
@@ -67,6 +67,7 @@ if ($error) {
 	if (mysqli_query($conn, $query)) {
 		//success
 		echo $query . " success!";
+		setcookie("handle",$handle, time()+3600); //set cookie handle
 	} else {
 		//not successful
 		echo $query . " unsuccessful";
