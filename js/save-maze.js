@@ -31,7 +31,7 @@ $('#save-maze').click(function() {
 				saveData: json_arr,
 				maze-name: name
 			}
-	})
+	});
 
-	window.location = "http://maze.mybluemix.net/";
+	//window.location = "http://maze.mybluemix.net/";
 });
