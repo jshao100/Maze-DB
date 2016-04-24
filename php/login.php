@@ -22,15 +22,13 @@ if(!isset($name) || !isset($handle)) {
 }
 $query = "select * from users where user_handle='" . $username . "' and user_pass='" . md5($password) . "'";
 $result = mysqli_query($conn, $query);
-echo $query;
-echo $result;
 if(mysqli_num_rows($result) != 1) {
 	$error = true;
 }
 mysqli_close($conn);
 if($error) {
-	#header('Location: ../login.php');
+	header('Location: ../login.php');
 } else {
-	#header('Location: ../create.php');
+	header('Location: ../create.php');
 }
 exit();
