@@ -16,15 +16,15 @@
 					<div class="top-bar-left">
 						<ul class="menu">
 							<li class="menu-text">aMAZEing DB</li>
-							<li><a href="./create.html">CREATE</a></li>
-							<li><a href="./index.html">SEARCH</a></li>
+							<li><a href="./create.php">CREATE</a></li>
+							<li><a href="./index.php">SEARCH</a></li>
 							<li><a href="#">RANDOM</a></li>
 						</ul>
 					</div>
 					<div class="top-bar-right">
 						<ul class="menu">
 							<li><a href="#">MY MAZES</a></li>
-							<li><a href="./login.html" class="button">Login/Sign Up</a></li>
+							<li><a href="./login.php" class="button">Login/Sign Up</a></li>
 						</ul>
 					</div>
 				</div>
