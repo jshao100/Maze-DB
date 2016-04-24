@@ -27,6 +27,6 @@ $('#save-maze').click(function() {
 	$.ajax({
 			type: 'POST',
 			url: '../php/writeFile.php',
-			data: json_arr
+			data: {saveData: json_arr}
 	})
 });
