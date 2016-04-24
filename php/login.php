@@ -20,7 +20,7 @@ $error = false;
 if(!isset($name) || !isset($handle)) {
 	$error = true;
 }
-$query = "select * from users where user_handle='" . $handle . "' and user_pass='" . md5($password) . "'";
+$query = "select * from users where user_handle='" . $username . "' and user_pass='" . md5($password) . "'";
 $result = mysqli_query($conn, $query);
 echo $query;
 echo $result;
@@ -29,8 +29,8 @@ if(mysqli_num_rows($result) != 1) {
 }
 mysqli_close($conn);
 if($error) {
-	#header('Location: ../create.php');
+	#header('Location: ../login.php');
 } else {
-	#header('Location: ../index.php');
+	#header('Location: ../create.php');
 }
 exit();
