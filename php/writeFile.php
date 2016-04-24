@@ -1,5 +1,6 @@
 <html>
 <?php
+header('Location: ../index.php');
 
 $arr = json_decode(str_replace('\\', '', $_POST['saveData']));
 
@@ -12,6 +13,6 @@ foreach ($arr as $value) {
 
 fclose($file);
 
-header('Location: ../index.php');
+exit;
 ?>
 </html>
