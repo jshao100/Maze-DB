@@ -6,7 +6,7 @@ $pass = "cedf8312";
 $db = "ad_e15d55d16dfba74";
 
 
-$conn = new mysqli_connect($host, $user, $pass, $db, $port);
+$conn = mysqli_connect($host, $user, $pass, $db, $port);
 
 if (!$conn) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
