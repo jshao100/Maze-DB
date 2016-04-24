@@ -1,3 +1,4 @@
+<html>
 <?php
 
 $arr = json_decode(str_replace('\\', '', $_POST['saveData']));
@@ -10,3 +11,4 @@ fclose($file);
 
 header('Location: ../index.php');
 ?>
+</html>
