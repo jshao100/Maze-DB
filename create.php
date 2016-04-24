@@ -15,8 +15,11 @@
 			<div class="row">
 				<div class="maze medium-centered"></div>
 			</div>
-			<div class="row save-button">
-				<div class="medium-2 medium-centered">
+			<div class="row save-button medium-4 medium-centered">
+				<div class="medium-6 column">
+					<input id="maze-name" type="text" placeholder="Name"/>
+				</div>
+				<div class="medium-6 column">
 					<a id="save-maze" class="button" href="#">Save Maze</a>
 				</div>
 			</div>

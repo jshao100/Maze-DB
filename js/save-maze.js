@@ -1,5 +1,3 @@
-//var fs = require("fs");
-
 $('#save-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
@@ -24,10 +22,15 @@ $('#save-maze').click(function() {
 
 	var json_arr = JSON.stringify(array);
 
+	var name = $('#maze-name').val();
+
 	$.ajax({
 			type: 'POST',
 			url: '../php/writeFile.php',
-			data: {saveData: json_arr}
+			data: {
+				saveData: json_arr,
+				maze-name: name
+			}
 	})
 
 	window.location = "http://maze.mybluemix.net/";
