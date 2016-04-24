@@ -6,6 +6,8 @@
 
 	<link rel="stylesheet" href="./stylesheets/foundation.css"/>
 	<link rel="stylesheet" href="./stylesheets/app.css"/>
+	<link rel="stylesheet" href="./stylesheets/maze.css"/>
+	<link rel="stylesheet" href="./stylesheets/login.css"/>
 </head>
 <body>
 	<section class="contain-to-grid sticky">

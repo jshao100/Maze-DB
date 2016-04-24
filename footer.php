@@ -17,6 +17,8 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="./js/vendor/foundation.min.js"></script>
+<script src="./js/create-maze.js"></script>
+<script src="./js/save-maze.js"></script>
 <script>
 	$(document).foundation();
 </script>
