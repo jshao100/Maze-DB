@@ -5,7 +5,7 @@ $arr = json_decode(str_replace('\\', '', $_POST['saveData']));
 
 $file = fopen("../mazes/test.txt","w");
 
-fwrite("Hello World\n");
+fwrite($file, "Hello World\n");
 foreach ($arr as $value) {
 	fwrite($file, $value);
 }
