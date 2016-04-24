@@ -35,7 +35,7 @@
 			<div class="medium-6 column">
 				<div class="signup-panel">
 					<p class="welcome">Hello, new user!</p>
-					<form action = "signup.php" method="post" class="medium-8 medium-push-2">
+					<form action = "./php/signup.php" method="post" class="medium-8 medium-push-2">
 						<div class="row collapse">
 							<div class="small-12  columns">
 								<input type="text" placeholder="Full Name" name="name">
@@ -63,7 +63,7 @@
 			<div class="medium-6 column">
 				<div class="signup-panel">
 					<p class="welcome">Welcome back!</p>
-					<form action="login.php" method="post" class="medium-8 medium-push-2">
+					<form action="./php/login.php" method="post" class="medium-8 medium-push-2">
 						<div class="row collapse">
 							<div class="small-12  columns">
 								<input type="text" placeholder="Username" name="handle">
