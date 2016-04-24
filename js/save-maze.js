@@ -30,5 +30,5 @@ $('#save-maze').click(function() {
 			data: {saveData: json_arr}
 	})
 
-	window.location = "http://maze.bluemix.net/";
+	window.location = "http://maze.mybluemix.net/";
 });
