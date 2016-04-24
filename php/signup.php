@@ -28,14 +28,20 @@ echo "vars done printing";
 echo "\n";
  */
 
-$error = false
+$error = false;
 
 //null input
-	if (!isset($name) || !isset($handle) || !isset($password))		$error = true;
+if (!isset($name) || !isset($handle) || !isset($password)) {
+	$error = true;
+}
 //did not provide first and last name OR space in username
-else if (count($name) < 2 || strpos($handle, " "))				$error = true;	
+else if (count($name) < 2 || strpos($handle, " ")) {
+	$error = true;
+}
 //password not the same
-else if (strcmp($password, $password2) !== 0)						$error = true;	
+else if (strcmp($password, $password2) !== 0) {
+	$error = true;	
+}
 //password checks
 else {
 	if (strlen($password) < 8)				$error = true;
