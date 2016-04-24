@@ -19,7 +19,8 @@ $handle = $_POST['handle'];
 $password = $_POST['password'];
 $password2 = $_POST['password'];
 
-echo $name;
+echo $name[0];
+echo $name[1];
 echo $handle;
 echo $password;
 echo $password2;
