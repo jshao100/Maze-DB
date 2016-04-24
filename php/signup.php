@@ -74,9 +74,9 @@ if ($error) {
 }
 
 mysqli_close($conn);
-setcookie("handle", $_POST["handle"], time()+3600); //set cookie handle
-echo "cookie pls ";
-echo $_COOKIE["handle"];
-//header('Location: ../index.php');
+setcookie("handle", $_POST["handle"], time()+3600, "/"); //set cookie handle
+//echo "cookie pls ";
+//echo $_COOKIE["handle"];
+header('Location: ../index.php');
 //exit();
 ?>
