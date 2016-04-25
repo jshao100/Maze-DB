@@ -1,7 +1,6 @@
 $('#save-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
-
 	var array = new Array(rows.length);
 
 	var i;
@@ -22,6 +21,8 @@ $('#save-maze').click(function() {
 
 	var json_arr = JSON.stringify(array);
 	var name = $('#maze-name').val();
+	var rating = $('#sliderOutput1').val();
+	var difficulty = $('#sliderOutput2').val();
 
 	if (name == null || name == "") {
 		alert("Please enter a name for your maze");
@@ -31,7 +32,9 @@ $('#save-maze').click(function() {
 				url: '../php/writeFile.php',
 				data: {
 					saveData: json_arr,
-					mazename: name
+					mazename: name,
+					rating: rating,
+					difficulty: difficulty
 				}
 		});
 		window.location = "http://maze.mybluemix.net/";

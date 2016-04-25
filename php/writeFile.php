@@ -3,6 +3,8 @@ $file = fopen("../mazes/test.txt","w");
 $arr = json_decode(str_replace('\\', '', $_POST['saveData']));
 $name = $_POST['mazename'];
 $user_id = $_COOKIE['uid'];
+$rating = $_POST['rating'];
+$difficulty = $_POST['difficulty'];
 
 $host = "us-cdbr-iron-east-03.cleardb.net";
 $port = "3306";
@@ -43,13 +45,20 @@ if (mysqli_num_rows($result) > 0) {
 
 fwrite($debug, "User id is " . $user_id . "\n");
 
-$query = "INSERT INTO mazes (maze_name, maze_author) VALUES ('" . $name . "','" . $user_id . "')";
+$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "')";
 if(mysqli_query($conn, $query)) {
 	$query = "SELECT maze_id FROM mazes WHERE maze_name = '" . $name . "'";
 	$result = mysqli_query($conn, $query);
 	$maze_id = 0;
 	while ($row = mysqli_fetch_assoc($result)) {
 		$maze_id = $row['maze_id'];
+	}
+
+	$query2 = "INSERT INTO votes (maze_id, user_id, rating, difficulty) VALUES ('" . $maze_id . "','" . $user_id . "','" . $rating . "','" . $difficulty . "')";
+	if(mysqli_query($conn, $query2)) {
+		fwrite($debug, "Successful entry into votes\n");
+	} else {
+		fwrite($debug, "No entry into votes\n");
 	}
 
 	fwrite($debug, "maze_id is " . $maze_id . "\n");
