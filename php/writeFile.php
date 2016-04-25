@@ -54,7 +54,7 @@ if(mysqli_query($conn, $query)) {
 
 	fwrite($debug, "maze_id is " . $maze_id . "\n");
 
-	$path = "../mazes/" . $id . ".txt";
+	$path = "../mazes/" . $maze_id . ".txt";
 	$f = fopen($path ,"w");
 	foreach ($arr as $value) {
 		fwrite($f, $value . "\n");
