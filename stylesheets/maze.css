@@ -38,9 +38,13 @@
 
 .maze-subtitle p {
 	text-align: center;
+	font-size: 20px;
 }
 
 .maze-subtitle .maze-votes {
 	display: block;
 }
 
+.pad-bot {
+	padding-bottom: 15px;
+}

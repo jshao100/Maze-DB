@@ -45,12 +45,12 @@ $scale_factor = floor($scale_factor);
 
 ?>
 <section class="main">
-	<div class="medium-4 medium-centered maze-title">
+	<div class="row medium-4 medium-centered maze-title">
 		<h2>
 			<?php echo $maze_name;?>
 		</h2>
 	</div>
-	<div class="medium-4 medium-centered maze-subtitle">
+	<div class="row medium-4 medium-centered maze-subtitle">
 		<div class="medium-6 column">
 			<p>
 				<?php echo strtolower($author_name);?>
@@ -62,7 +62,7 @@ $scale_factor = floor($scale_factor);
 			</p>
 		</div>
 	</div>
-	<div class="medium-5 medium-centered maze-subtitle">
+	<div class="row medium-5 medium-centered maze-subtitle pad-bot">
 		<div class="maze-votes search-options medium-6 column">
 			<div class="small-4 columns slider-label">
 				<p>Rating:</p>
