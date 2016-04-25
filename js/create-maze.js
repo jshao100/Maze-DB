@@ -43,7 +43,7 @@ function createMaze(scale, w, h) {
 	
 	$(".maze").css("width",(scale*w)+2);
 	$(".maze").css("border","solid 1px black");
-	$(".save-button").children("div").children("a").css("display","block");
+	$(".save-button").children("div").children().css("display","block");
 
 	var i;
 	for(i = 0; i < h; i++) {

@@ -24,8 +24,9 @@
 	display: inline-block;
 }
 
-.save-button a {
+.save-button a, .save-button input {
 	display: none;
 	width: 100%;	
 	margin-top: 25px;
+	height: 40px;
 }
