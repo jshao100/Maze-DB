@@ -20,7 +20,7 @@ if (!isset($_COOKIE['handle'])) {
 }
  */
 
-$name = $_POST['maze-name'];
+$name = $_POST['mazename'];
 
 /*
 //check if name exists already
