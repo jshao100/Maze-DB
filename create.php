@@ -16,7 +16,7 @@
 			<div class="maze medium-centered"></div>
 		</div>
 		<div class="row">
-			<div class="search-options">
+			<div class="search-options medium-6 medium-centered">
 				<div class="small-2 columns slider-label">
 					<p>Rating:</p>
 				</div>
@@ -33,18 +33,18 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="search-options">
+			<div class="search-options medium-6 medium-centered">
 				<div class="small-2 columns slider-label">
-					<p>Rating:</p>
+					<p>Difficulty:</p>
 				</div>
 				<div class="small-8 columns">
 					<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
-						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
 						<span class="slider-fill" data-slider-fill></span>
 					</div>
 				</div>
 				<div class="small-2 columns span-label">
-					<input type="number" id="sliderOutput1" name="rating">
+					<input type="number" id="sliderOutput2" name="difficulty">
 					<span>& up</span>
 				</div>
 			</div>
