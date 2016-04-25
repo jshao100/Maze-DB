@@ -13,28 +13,34 @@ $conn = mysqli_connect($host, $user, $pass, $db, $port);
 
 if(!$conn) {
 	fwrite($file, "Failed to connect\n");
+	fclose($file);
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	exit();
 }
 
 if (!isset($_COOKIE['handle'])) {
 	fwrite($file, "COOKIE[handle] not set\n");
+	fclose($file);
 	mysqli_close($conn);
 	header('Location: http://maze.mybluemix.net/login.php');
 	exit();
 }
 
-fwrite($file, "Check if name exists\n");
+$debug = fopen("../mazes/debug.txt","w");
+
+fwrite($debug, "Check if name exists\n");
 //check if name exists already
 $query = "select * from mazes where maze_name='" . $name . "'";
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
-	fwrite($file, "Name exists\n");
+	fwrite($debug, "Name exists\n");
+	fclose($debug);
 	mysqli_close($conn);
 	header('Location: http://maze.mybluemix.net/create.php');
 	exit();
 }
-fwrite($file, "Name does not exist\n Query for user_id");
+fwrite($debug, "Name does not exist\n Query for user_id");
+fclose($debug);
 /*
 
 $query = "select user_id from users where user_name = '" . $_COOKIE['handle'] . "'";
