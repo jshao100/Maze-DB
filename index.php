@@ -33,7 +33,7 @@
 									<p>Rating:</p>
 								</div>
 								<div class="small-8 columns">
-									<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
+									<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
 										<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 										<span class="slider-fill" data-slider-fill></span>
 									</div>
@@ -50,7 +50,7 @@
 									<p>Difficulty:</p>
 								</div>
 								<div class="small-8 columns">
-									<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
+									<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
 										<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
 										<span class="slider-fill" data-slider-fill></span>
 									</div>
