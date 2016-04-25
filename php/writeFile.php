@@ -1,5 +1,4 @@
 <?php
-$file = fopen("../mazes/test.txt","w");
 $arr = json_decode(str_replace('\\', '', $_POST['saveData']));
 $name = $_POST['mazename'];
 $user_id = $_COOKIE['uid'];
@@ -15,15 +14,11 @@ $db = "ad_e15d55d16dfba74";
 $conn = mysqli_connect($host, $user, $pass, $db, $port);
 
 if(!$conn) {
-	fwrite($file, "Failed to connect\n");
-	fclose($file);
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	exit();
 }
 
 if (!isset($_COOKIE['handle'])) {
-	fwrite($file, "COOKIE[handle] not set\n");
-	fclose($file);
 	mysqli_close($conn);
 	header('Location: http://maze.mybluemix.net/login.php');
 	exit();
@@ -45,7 +40,13 @@ if (mysqli_num_rows($result) > 0) {
 
 fwrite($debug, "User id is " . $user_id . "\n");
 
-$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "')";
+$str = "";
+foreach ($arr as $value) {
+	$str .= $value . "\n";
+}
+
+$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "')";
+
 if(mysqli_query($conn, $query)) {
 	$query = "SELECT maze_id FROM mazes WHERE maze_name = '" . $name . "'";
 	$result = mysqli_query($conn, $query);
@@ -62,18 +63,7 @@ if(mysqli_query($conn, $query)) {
 	}
 
 	fwrite($debug, "maze_id is " . $maze_id . "\n");
-
-	$path = "../mazes/" . $maze_id . ".txt";
-	$f = fopen($path ,"w");
-	foreach ($arr as $value) {
-		fwrite($f, $value . "\n");
-		fwrite($file, $value);
-		fwrite($file, "\n");
-	}
-	fwrite($file, $name);
-	fclose($f);
-	fclose($file);
-
+	fclose($debug);
 } else {
 	echo "unsuccessful entry into mazes\n";
 }
