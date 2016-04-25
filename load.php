@@ -59,6 +59,7 @@ echo $height;
 $scale_factor = 1;
 if ($height > $width)	$scale_factor = 600/$height;
 else							$scale_factor = 600/$width;
+$scale_factor = floor($scale_factor);
 
 ?>
 <section class="main">
@@ -71,7 +72,7 @@ echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+2).
 	for($h = 0; $h < $height; $h++) {
 		echo "<div class='maze-row' style='height:".$scale_factor.";'>";
 		for($w = 0; $w < $width; $w++) {
-			$pos = $h*$height + $w;
+			$pos = $h*$height + $w + $h;
 			if ($maze_data[$pos] == "X") {
 				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
 			} else if ($maze_data[$pos] == "S") {
