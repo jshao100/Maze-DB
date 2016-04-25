@@ -44,7 +44,7 @@ for ($i = 0; $i < count($maze_data); $i++) {
 		$width++;
 	}
 }
-$width = $width / 2;
+$width = $width / $height;
 
 echo $author_name . "\n";
 echo $author_id . "\n";
