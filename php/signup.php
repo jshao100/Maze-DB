@@ -73,8 +73,16 @@ if ($error) {
 	}
 }
 
+$query = "select user_id from users where user_handle = '" . $_COOKIE['handle'] . "'";
+$result1 = mysqli_query($conn, $query);
+$user_id = 0;
+while ($row = mysqli_fetch_assoc($result1)) {
+	$user_id = $row['user_id'];	
+}
+
 mysqli_close($conn);
 setcookie("handle", $_POST["handle"], time()+3600, "/"); //set cookie handle
+setcookie("uid", $user_id, time()+3600, "/");
 //echo "cookie pls ";
 //echo $_COOKIE["handle"];
 header('Location: ../index.php');

@@ -25,11 +25,20 @@ $result = mysqli_query($conn, $query);
 if(mysqli_num_rows($result) != 1) {
 	$error = true;
 }
+
+$query = "select user_id from users where user_handle = '" . $_COOKIE['handle'] . "'";
+$result1 = mysqli_query($conn, $query);
+$user_id = 0;
+while ($row = mysqli_fetch_assoc($result1)) {
+	$user_id = $row['user_id'];	
+}
+
 mysqli_close($conn);
 if($error) {
 	header('Location: ../login.php');
 } else {
 	setcookie("handle", $_POST["handle"], time()+3600, "/"); //set cookie handle
+	setcookie("uid", $user_id, time()+3600, "/");
 	header('Location: ../create.php');
 }
 exit();
