@@ -35,3 +35,12 @@
 .maze-votes {
 	display: none;
 }
+
+.maze-subtitle p {
+	text-align: center;
+}
+
+.maze-subtitle .maze-votes {
+	display: block;
+}
+

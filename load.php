@@ -45,46 +45,46 @@ $scale_factor = floor($scale_factor);
 
 ?>
 <section class="main">
-	<div class="row maze-title">
+	<div class="medium-4 medium-centered maze-title">
 		<h2>
-			<?php echo strtolower($maze_name);?>
+			<?php echo $maze_name;?>
 		</h2>
 	</div>
-	<div class="row maze-subtitle">
+	<div class="medium-4 medium-centered maze-subtitle">
 		<div class="medium-6 column">
-			<?php echo strtolower($author_name);?>
+			<p>
+				<?php echo strtolower($author_name);?>
+			</p>
 		</div>
 		<div class="medium-6 column">
-			<?php echo strtolower($maze_date);?>
+			<p>
+				<?php echo $maze_date;?>
+			</p>
 		</div>
 	</div>
-	<div class="row maze-subtitle">
+	<div class="medium-5 medium-centered maze-subtitle">
 		<div class="maze-votes search-options medium-6 column">
-			<div class="small-2 columns slider-label">
+			<div class="small-4 columns slider-label">
 				<p>Rating:</p>
 			</div>
 			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
-					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+				<div class="slider" data-slider data-initial-start="<?php echo $maze_rating;?>" data-step="1" data-end="5">
+					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
 					<span class="slider-fill" data-slider-fill></span>
+					<input type="hidden">
 				</div>
-			</div>
-			<div class="small-2 columns span-label">
-				<input type="number" id="sliderOutput1" name="rating">
 			</div>
 		</div>
 		<div class="maze-votes search-options medium-6 column">
-			<div class="small-2 columns slider-label">
+			<div class="small-4 columns slider-label">
 				<p>Difficulty:</p>
 			</div>
 			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
-					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+				<div class="slider" data-slider data-initial-start="<?php echo $maze_diff;?>" data-step="1" data-end="5">
+					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
 					<span class="slider-fill" data-slider-fill></span>
+					<input type="hidden">
 				</div>
-			</div>
-			<div class="small-2 columns span-label">
-				<input type="number" id="sliderOutput2" name="difficulty">
 			</div>
 		</div>
 
