@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_assoc($result1)) {
 	$author_name = $row['user_handle'];
 }
 
-$maze_dim = explode($maze_data, "\n");
+$maze_dim = explode("\n", $maze_data);
 $height = sizeof($maze_dim);
 $width = strlen($maze_dim[0]);
 
