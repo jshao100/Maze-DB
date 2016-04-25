@@ -40,13 +40,16 @@ if (mysqli_num_rows($result) > 0) {
 	exit();
 }
 fwrite($debug, "Name does not exist\n Query for user_id");
-fclose($debug);
-/*
 
 $query = "select user_id from users where user_name = '" . $_COOKIE['handle'] . "'";
 $result1 = mysqli_query($conn, $query);
 $res1 = mysqli_fetch_array($result1, MYSQLI_NUM);
 $user_id = $res1[0];
+
+fwrite($debug, "User id is " . $user_id . "\n");
+fclose($debug);
+
+/*
 
 $query = "INSERT INTO mazes (maze_name, maze_author) VALUES ('" . $name . "','" . $user_id . "')";
 if(mysqli_query($conn, $query)) {
