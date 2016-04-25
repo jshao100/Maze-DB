@@ -28,6 +28,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 	$maze_data = $row['maze_data'];
 }
 
+$maze_rating_f = floor($maze_rating);
+$maze_diff_f = floor($maze_diff);
+
 $query1 = "SELECT user_handle FROM users WHERE user_id=" . $author_id;
 $result1 = mysqli_query($conn, $query1);
 while ($row = mysqli_fetch_assoc($result1)) {
@@ -104,7 +107,7 @@ for($h = 0; $h < $height; $h++) {
 				<p>Rating:</p>
 			</div>
 			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="<?php echo $maze_rating;?>" data-step="1" data-end="5">
+				<div class="slider" data-slider data-initial-start="<?php echo $maze_rating_f;?>" data-step="1" data-end="5">
 					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
 					<span class="slider-fill" data-slider-fill></span>
 					<input type="hidden">
@@ -116,7 +119,7 @@ for($h = 0; $h < $height; $h++) {
 				<p>Difficulty:</p>
 			</div>
 			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="<?php echo $maze_diff;?>" data-step="1" data-end="5">
+				<div class="slider" data-slider data-initial-start="<?php echo $maze_diff_f;?>" data-step="1" data-end="5">
 					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
 					<span class="slider-fill" data-slider-fill></span>
 					<input type="hidden">
