@@ -50,7 +50,7 @@ $scale_factor = floor($scale_factor);
 			<?php echo $maze_name;?>
 		</h2>
 	</div>
-	<div class="row medium-4 medium-centered maze-subtitle">
+	<div class="row medium-4 medium-centered maze-subtitle pad-bot">
 		<div class="medium-6 column">
 			<p>
 				<?php echo strtolower($author_name);?>
@@ -72,7 +72,31 @@ $scale_factor = floor($scale_factor);
 			</p>
 		</div>
 	</div>
-	<div class="row medium-5 medium-centered maze-subtitle pad-bot">
+	<div class="row">
+<?php
+echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+4).";'>";
+$h;
+$w;
+for($h = 0; $h < $height; $h++) {
+	echo "<div class='maze-row' style='height:".$scale_factor.";'>";
+	$str = str_split($maze_dim[$h]);
+	for($w = 0; $w < $width; $w++) {
+		if ($str[$w] == "X") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
+		} else if ($str[$w] == "S") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
+		} else if ($str[$w] == "E") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
+		} else {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
+		}
+	}
+	echo "</div>";
+}
+?>		
+	</div>
+	<div class="row medium-5 medium-centered maze-subtitle">
+		<form>
 		<div class="maze-votes search-options medium-6 column">
 			<div class="small-4 columns slider-label">
 				<p>Rating:</p>
@@ -97,30 +121,11 @@ $scale_factor = floor($scale_factor);
 				</div>
 			</div>
 		</div>
+		<div class="medium-4 medium-centered">
+			<button type="submit">Submit Vote</button>
+		</div>
+	</form>
 
-	</div>
-	<div class="row">
-<?php
-echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+4).";'>";
-$h;
-$w;
-for($h = 0; $h < $height; $h++) {
-	echo "<div class='maze-row' style='height:".$scale_factor.";'>";
-	$str = str_split($maze_dim[$h]);
-	for($w = 0; $w < $width; $w++) {
-		if ($str[$w] == "X") {
-			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
-		} else if ($str[$w] == "S") {
-			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
-		} else if ($str[$w] == "E") {
-			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
-		} else {
-			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
-		}
-	}
-	echo "</div>";
-}
-?>		
 	</div>
 </section>
 <?php include 'footer.php'?>
