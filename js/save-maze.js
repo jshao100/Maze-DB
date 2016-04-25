@@ -21,17 +21,19 @@ $('#save-maze').click(function() {
 	}
 
 	var json_arr = JSON.stringify(array);
-
 	var name = $('#maze-name').val();
-	alert(name);
 
-	$.ajax({
-			type: 'POST',
-			url: '../php/writeFile.php',
-			data: {
-				saveData: json_arr,
-				mazename: name
-			}
-	});
-	//window.location = "http://maze.mybluemix.net/";
+	if (name == null || name == "") {
+		alert("Please enter a name for your maze");
+	} else {
+		$.ajax({
+				type: 'POST',
+				url: '../php/writeFile.php',
+				data: {
+					saveData: json_arr,
+					mazename: name
+				}
+		});
+		window.location = "http://maze.mybluemix.net/";
+	}
 });
