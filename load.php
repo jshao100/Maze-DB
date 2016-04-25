@@ -99,7 +99,7 @@ for($h = 0; $h < $height; $h++) {
 ?>		
 	</div>
 </div>
-<div class="row medium-5 medium-centered maze-subtitle">
+<div class="row medium-5 medium-centered maze-subtitle" style="<?php if(!isset($_COOKIE['handle'])){ echo 'display:none;';?>">
 	<form action="./php/vote.php" method="post">
 		<div class="row">
 			<div class="maze-votes search-options medium-6 column">
