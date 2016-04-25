@@ -61,6 +61,16 @@ $scale_factor = floor($scale_factor);
 				<?php echo $maze_date;?>
 			</p>
 		</div>
+		<div class="medium-6 column">
+			<p>
+				Rating: <b><?php echo $maze_rating;?></b>
+			</p>
+		</div>
+		<div class="medium-6 column">
+			<p>
+				Difficulty: <b><?php echo $maze_diff;?></b>
+			</p>
+		</div>
 	</div>
 	<div class="row medium-5 medium-centered maze-subtitle pad-bot">
 		<div class="maze-votes search-options medium-6 column">
