@@ -22,14 +22,14 @@ $('#save-maze').click(function() {
 
 	var json_arr = JSON.stringify(array);
 
-	var name = $('#maze-name').val();
+	//var name = $('#maze-name').val();
 
 	$.ajax({
 			type: 'POST',
 			url: '../php/writeFile.php',
 			data: {
-				saveData: json_arr,
-				maze-name: name
+				saveData: json_arr
+				//maze-name: name
 			}
 	});
 
