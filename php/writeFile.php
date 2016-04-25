@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 fwrite($debug, "Name does not exist\n Query for user_id\n");
 
-$query = "select user_id from users where user_name = '" . $_COOKIE['handle'] . "'";
+$query = "select user_id from users where user_handle = '" . $_COOKIE['handle'] . "'";
 $result1 = mysqli_query($conn, $query);
 $user_id = 0;
 while ($row = mysqli_fetch_assoc($result1)) {
