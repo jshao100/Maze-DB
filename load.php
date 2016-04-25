@@ -55,5 +55,37 @@ echo $maze_diff . "\n";
 echo $maze_data . "\n";
 echo $width;
 echo $height;
+
+$scale_factor = 1;
+if ($height > $width)	$scale_factor = 600/$height;
+else							$scale_factor = 600/$width;
+
 ?>
+<section class="main">
+	<div class="row">
+		<div class="maze medium-centerd">
+<?php
+echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+2).";border:1px solid black;'>";
+	$h;
+	$w;
+	for($h = 0; $h < $height; $h++) {
+		echo "<div class='maze-row' style='height:".$scale_factor.";'>";
+		for($w = 0; $w < $width; $w++) {
+			$pos = $h*$height + $w;
+			if ($maze_data[$pos] == "X") {
+				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
+			} else if ($maze_data[$pos] == "S") {
+				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
+			} else if ($maze_data[$pos] == "E") {
+				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
+			} else {
+				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
+			}
+		}
+		echo "</div>";
+	}
+?>		
+		</div>
+	</div>
+</section>
 <?php include 'footer.php'?>
