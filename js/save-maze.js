@@ -23,6 +23,7 @@ $('#save-maze').click(function() {
 	var json_arr = JSON.stringify(array);
 
 	var name = $('#maze-name').val();
+	alert(name);
 
 	$.ajax({
 			type: 'POST',
@@ -32,6 +33,5 @@ $('#save-maze').click(function() {
 				maze-name: name
 			}
 	});
-
 	//window.location = "http://maze.mybluemix.net/";
 });

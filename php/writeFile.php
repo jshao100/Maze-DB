@@ -19,7 +19,9 @@ if (!isset($_COOKIE['handle'])) {
 	exit();
 }
  */
+
 $name = $_POST['maze-name'];
+
 /*
 //check if name exists already
 $query = "select * from mazes where maze_name='" . $name . "'";
@@ -50,7 +52,7 @@ if(mysqli_query($conn, $query)) {
 		fwrite($file, $value);
 		fwrite($file, "\n");
 	}
-	fwrite($name);
+	fwrite($file, $name);
 	fclose($file);
 	/*
 } else {
