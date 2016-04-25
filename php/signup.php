@@ -73,7 +73,7 @@ if ($error) {
 	}
 }
 
-$query = "select user_id from users where user_handle = '" . $_COOKIE['handle'] . "'";
+$query = "select user_id from users where user_handle = '" . $_POST['handle'] . "'";
 $result1 = mysqli_query($conn, $query);
 $user_id = 0;
 while ($row = mysqli_fetch_assoc($result1)) {
