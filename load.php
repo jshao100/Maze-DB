@@ -13,7 +13,7 @@ $author_id = 0;
 $author_name = "";
 $maze_date = "";
 $maze_name = "";
-$maze_data = "";
+$maze_data;
 $maze_rating = 0;
 $maze_diff = 0;
 
@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 	$maze_name = $row['maze_name'];
 	$maze_rating = $row['maze_rating'];
 	$maze_diff = $row['maze_diff'];
-	$maze_data = $row['maze_data'];
+	$maze_data = str_split($row['maze_data']);
 }
 
 $query1 = "SELECT user_handle FROM users WHERE user_id=" . $author_id;
@@ -34,6 +34,18 @@ while ($row = mysqli_fetch_assoc($result1)) {
 	$author_name = $row['user_handle'];
 }
 
+$i;
+$width = 0;
+$height = 0;
+for ($i = 0; $i < count($maze_data); $i++) {
+	if ($maze_data[$i] == "\n") {
+		$height++;	
+	}	else {
+		$width++;
+	}
+}
+$width = $width / 2;
+
 echo $author_name . "\n";
 echo $author_id . "\n";
 echo $maze_name . "\n";
@@ -41,5 +53,7 @@ echo $maze_id . "\n";
 echo $maze_rating . "\n";
 echo $maze_diff . "\n";
 echo $maze_data . "\n";
+echo $width;
+echo $height;
 ?>
 <?php include 'footer.php'?>

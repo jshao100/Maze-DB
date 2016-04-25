@@ -44,6 +44,7 @@ $str = "";
 foreach ($arr as $value) {
 	$str .= $value . "\n";
 }
+$str = rtrim($str, "\n");
 
 $query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "')";
 
