@@ -1,8 +1,4 @@
 <?php
-
-echo "on writeFile\n";
-header('Location: http://maze.mybluemix.net/');
-
 /*
 $host = "us-cdbr-iron-east-03.cleardb.net";
 $port = "3306";
@@ -45,20 +41,21 @@ if(mysqli_query($conn, $query)) {
 	$result = mysqli_query($conn, $query);
 	$res = mysqli_fetch_array($result, MYSQLI_NUM);
 	$id = $res[0];
-
+ */
 	$arr = json_decode(str_replace('\\', '', $_POST['saveData']));
-	$path = "../mazes/" . $id . ".txt";
-	$file = fopen($path ,"w");
+	//$path = "../mazes/" . $id . ".txt";
+//$file = fopen($path ,"w");
+	$file = fopen("../mazes/test.txt","w");
 	foreach ($arr as $value) {
 		fwrite($file, $value);
 		fwrite($file, "\n");
 	}
 	fclose($file);
+	/*
 } else {
 	echo "unsuccessful entry into mazes\n";
 }
 mysqli_close($conn);
+	 */
 header('Location: http://maze.mybluemix.net');
-exit();
- */
 ?>
