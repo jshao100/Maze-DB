@@ -11,9 +11,38 @@ if(!$conn) {
 	echo "Failed to connect: " . mysqli_connect_error();
 	exit();
 }
-
+$user = $_COOKIE['uid'];
 $ratingVote = $_POST['rating'];
 $diffVote = $_POST['difficulty'];
 $maze_id = 12;
 #get maze id
+//check if vote exists
+$query = "select * from mazes where maze_id = '" . $maze_id . "' and user_id = '" . $user . "'";
+
+$result1 = mysqli_query($conn, $query);
+
+$query2 = "INSERT INTO votes(maze_id, user_id, rating, difficulty) values(" . $maze_id . ", " . $_COOKIE['uid'] . ", " . $ratingVote . ", " . $diffVote . ")";
+
+if(mysqli_num_rows($result) > 0) 
+	$query2 = "UPDATE votes set rating = " . $ratingVote . ", difficulty= " . $diffVote . "where maze_id = " $maze_id . " and user_id = " . $user;
+
+
+//insert vote
+
+mysqli_query($conn, $query2);
+
+$query3 = "select SUM(rating), SUM(difficulty), COUNT(rating) from votes where maze_id = " . $maze_id;
+$result3 = mysqli_query($conn, $query3);
+$rateSum = $ratingVote;
+$diffSum = $diffVote;
+$count = 0;
+while($row = mysqli_fetch_assoc($result3)) {
+	$rateSum = $row['SUM(rating)'];
+	$diffSum = $row['SUM(difficulty)'];
+	$count = $row['COUNT(rating)'];
+}
+
+$newRate = $rateSum / $count;
+$newDiff = $diffSum / $count;
+$query4 = "
 
