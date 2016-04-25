@@ -134,6 +134,7 @@ if(!isset($_COOKIE['handle'])) {
 				<div class="small-2 columns span-label" style="display:none;">
 					<input type="number" id="sliderOutput2" name="difficulty">
 				</div>
+				<input type="number" name="id" value="<?php echo $maze_id;?>" style="display:none;">
 			</div>
 		</div>
 		<div class="row">
