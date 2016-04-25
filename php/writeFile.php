@@ -1,6 +1,7 @@
 <?php
 
 echo "on writeFile\n";
+header('Location: http://maze.mybluemix.net/');
 
 /*
 $host = "us-cdbr-iron-east-03.cleardb.net";
