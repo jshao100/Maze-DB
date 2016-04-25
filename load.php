@@ -95,8 +95,10 @@ for($h = 0; $h < $height; $h++) {
 }
 ?>		
 	</div>
-	<div class="row medium-5 medium-centered maze-subtitle">
-		<form>
+</div>
+<div class="row medium-5 medium-centered maze-subtitle">
+	<form>
+		<div class="row">
 		<div class="maze-votes search-options medium-6 column">
 			<div class="small-4 columns slider-label">
 				<p>Rating:</p>
@@ -121,11 +123,13 @@ for($h = 0; $h < $height; $h++) {
 				</div>
 			</div>
 		</div>
-		<div class="medium-4 medium-centered">
-			<button type="submit">Submit Vote</button>
-		</div>
-	</form>
-
 	</div>
+	<div class="row">
+		<div class="medium-3 medium-centered">
+			<button class="button" type="submit">Submit Vote</button>
+		</div>
+	</div>
+	</form>
+</div>
 </section>
 <?php include 'footer.php'?>

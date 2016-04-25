@@ -48,3 +48,7 @@
 .pad-bot {
 	padding-bottom: 15px;
 }
+
+.maze-subtitle button {
+	width: 100%;
+}
