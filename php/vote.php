@@ -14,7 +14,7 @@ if(!$conn) {
 $user = $_COOKIE['uid'];
 $ratingVote = $_POST['rating'];
 $diffVote = $_POST['difficulty'];
-$maze_id = 12;
+$maze_id = $_GET['id'];
 #get maze id
 //check if vote exists
 $query = "select * from mazes where maze_id = '" . $maze_id . "' and user_id = '" . $user . "'";
