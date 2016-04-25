@@ -11,8 +11,17 @@ if(!conn) {
 	echo "Failed to connect to MySQL: " . mysqli_conect_error();
 }
 
-$searchType = $_POST['search_type'];
+$searchText = $_POST['search_text'];
+$type = $_POST['search_type'];
 $rating = $_POST['rating'];
 $difficulty = $_POST['difficulty'];
+
+
+$query = "select * from mazes where INSTR(" . $type . ", '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
+
+$result = mysqli_query($conn, $query);
+
+
+
 
 
