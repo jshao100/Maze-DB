@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 	$maze_name = $row['maze_name'];
 	$maze_rating = $row['maze_rating'];
 	$maze_diff = $row['maze_diff'];
-	$maze_data = str_split($row['maze_data']);
+	$maze_data = $row['maze_data'];
 }
 
 $query1 = "SELECT user_handle FROM users WHERE user_id=" . $author_id;
@@ -34,27 +34,9 @@ while ($row = mysqli_fetch_assoc($result1)) {
 	$author_name = $row['user_handle'];
 }
 
-$i;
-$width = 0;
-$height = 0;
-for ($i = 0; $i < count($maze_data); $i++) {
-	if ($maze_data[$i] == "\n") {
-		$height++;	
-	}	else {
-		$width++;
-	}
-}
-$width = $width / $height;
-
-echo $author_name . "\n";
-echo $author_id . "\n";
-echo $maze_name . "\n";
-echo $maze_id . "\n";
-echo $maze_rating . "\n";
-echo $maze_diff . "\n";
-echo $maze_data . "\n";
-echo $width;
-echo $height;
+$maze_dim = explode($maze_data, "\n");
+$height = sizeof($maze_dim);
+$width = strlen($maze_dim[0]);
 
 $scale_factor = 1;
 if ($height > $width)	$scale_factor = 600/$height;
@@ -71,13 +53,13 @@ echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+2).
 	$w;
 	for($h = 0; $h < $height; $h++) {
 		echo "<div class='maze-row' style='height:".$scale_factor.";'>";
+		$str = str_split($maze_dim[$h]);
 		for($w = 0; $w < $width; $w++) {
-			$pos = $h*$height + $w + $h;
-			if ($maze_data[$pos] == "X") {
+			if ($str[$w] == "X") {
 				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
-			} else if ($maze_data[$pos] == "S") {
+			} else if ($str[$w] == "S") {
 				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
-			} else if ($maze_data[$pos] == "E") {
+			} else if ($str[$w] == "E") {
 				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
 			} else {
 				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
