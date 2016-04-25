@@ -44,5 +44,11 @@ while($row = mysqli_fetch_assoc($result3)) {
 
 $newRate = $rateSum / $count;
 $newDiff = $diffSum / $count;
-$query4 = "
+
+$query4 = "update mazes set maze_rating=" . $newRate . ", maze_diff = " . $newdiff . " where maze_id=" . $maze_id;
+mysqli_query($conn, $query4);
+
+mysqli_close($conn);
+exit();
+?>
 
