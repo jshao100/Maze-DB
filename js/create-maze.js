@@ -41,8 +41,8 @@ function createMaze(scale, w, h) {
 	$(".maze-row").remove();
 	$(".maze-cell").remove();
 	
-	$(".maze").css("width",(scale*w)+2);
-	$(".maze").css("border","solid 1px black");
+	$(".maze").css("width",(scale*w)+4);
+	//$(".maze").css("border","solid 1px black");
 	$(".save-button").children("div").children().css("display","block");
 	$(".maze-votes").css("display","block");
 

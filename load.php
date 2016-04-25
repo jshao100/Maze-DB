@@ -45,30 +45,72 @@ $scale_factor = floor($scale_factor);
 
 ?>
 <section class="main">
-	<div class="row">
-		<div class="maze medium-centerd">
-<?php
-echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+2).";border:1px solid black;'>";
-	$h;
-	$w;
-	for($h = 0; $h < $height; $h++) {
-		echo "<div class='maze-row' style='height:".$scale_factor.";'>";
-		$str = str_split($maze_dim[$h]);
-		for($w = 0; $w < $width; $w++) {
-			if ($str[$w] == "X") {
-				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
-			} else if ($str[$w] == "S") {
-				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
-			} else if ($str[$w] == "E") {
-				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
-			} else {
-				echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
-			}
-		}
-		echo "</div>";
-	}
-?>		
+	<div class="row maze-title">
+		<h2>
+			<?php echo strtolower($maze_name);?>
+		</h2>
+	</div>
+	<div class="row maze-subtitle">
+		<div class="medium-6 column">
+			<?php echo strtolower($author_name);?>
 		</div>
+		<div class="medium-6 column">
+			<?php echo strtolower($maze_date);?>
+		</div>
+	</div>
+	<div class="row maze-subtitle">
+		<div class="maze-votes search-options medium-6 column">
+			<div class="small-2 columns slider-label">
+				<p>Rating:</p>
+			</div>
+			<div class="small-8 columns">
+				<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
+					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+					<span class="slider-fill" data-slider-fill></span>
+				</div>
+			</div>
+			<div class="small-2 columns span-label">
+				<input type="number" id="sliderOutput1" name="rating">
+			</div>
+		</div>
+		<div class="maze-votes search-options medium-6 column">
+			<div class="small-2 columns slider-label">
+				<p>Difficulty:</p>
+			</div>
+			<div class="small-8 columns">
+				<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
+					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+					<span class="slider-fill" data-slider-fill></span>
+				</div>
+			</div>
+			<div class="small-2 columns span-label">
+				<input type="number" id="sliderOutput2" name="difficulty">
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+<?php
+echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+4).";'>";
+$h;
+$w;
+for($h = 0; $h < $height; $h++) {
+	echo "<div class='maze-row' style='height:".$scale_factor.";'>";
+	$str = str_split($maze_dim[$h]);
+	for($w = 0; $w < $width; $w++) {
+		if ($str[$w] == "X") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:black'></div>"	;
+		} else if ($str[$w] == "S") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:green'></div>";
+		} else if ($str[$w] == "E") {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:red'></div>";
+		} else {
+			echo "<div class='maze-cell' style='height:".$scale_factor.";width:".$scale_factor.";background-color:white'></div>";
+		}
+	}
+	echo "</div>";
+}
+?>		
 	</div>
 </section>
 <?php include 'footer.php'?>
