@@ -102,36 +102,40 @@ for($h = 0; $h < $height; $h++) {
 <div class="row medium-5 medium-centered maze-subtitle">
 	<form>
 		<div class="row">
-		<div class="maze-votes search-options medium-6 column">
-			<div class="small-4 columns slider-label">
-				<p>Rating:</p>
+			<div class="maze-votes search-options medium-6 column">
+				<div class="small-4 columns slider-label">
+					<p>Rating:</p>
+				</div>
+				<div class="small-8 columns">
+					<div class="slider" data-slider data-initial-start="<?php echo $maze_rating_f;?>" data-step="1" data-end="5">
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+						<span class="slider-fill" data-slider-fill></span>
+					</div>
+				</div>
+				<div class="small-2 columns span-label" style="display:none;">
+					<input type="number" id="sliderOutput1" name="rating">
+				</div>
 			</div>
-			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="<?php echo $maze_rating_f;?>" data-step="1" data-end="5">
-					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
-					<span class="slider-fill" data-slider-fill></span>
-					<input type="hidden">
+			<div class="maze-votes search-options medium-6 column">
+				<div class="small-4 columns slider-label">
+					<p>Difficulty:</p>
+				</div>
+				<div class="small-8 columns">
+					<div class="slider" data-slider data-initial-start="<?php echo $maze_diff_f;?>" data-step="1" data-end="5">
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+						<span class="slider-fill" data-slider-fill></span>
+					</div>
+				</div>
+				<div class="small-2 columns span-label" style="display:none;">
+					<input type="number" id="sliderOutput2" name="difficulty">
 				</div>
 			</div>
 		</div>
-		<div class="maze-votes search-options medium-6 column">
-			<div class="small-4 columns slider-label">
-				<p>Difficulty:</p>
-			</div>
-			<div class="small-8 columns">
-				<div class="slider" data-slider data-initial-start="<?php echo $maze_diff_f;?>" data-step="1" data-end="5">
-					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
-					<span class="slider-fill" data-slider-fill></span>
-					<input type="hidden">
-				</div>
+		<div class="row">
+			<div class="medium-3 medium-centered">
+				<button class="button" type="submit">Submit Vote</button>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="medium-3 medium-centered">
-			<button class="button" type="submit">Submit Vote</button>
-		</div>
-	</div>
 	</form>
 </div>
 </section>
