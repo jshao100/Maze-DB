@@ -16,7 +16,7 @@
 			<div class="maze medium-centered"></div>
 		</div>
 		<div class="row">
-			<div class="search-options medium-6 medium-centered">
+			<div class="maze-votes search-options medium-6 medium-centered">
 				<div class="small-2 columns slider-label">
 					<p>Rating:</p>
 				</div>
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="search-options medium-6 medium-centered">
+			<div class="maze-votes search-options medium-6 medium-centered">
 				<div class="small-2 columns slider-label">
 					<p>Difficulty:</p>
 				</div>
