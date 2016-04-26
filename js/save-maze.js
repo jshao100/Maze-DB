@@ -1,3 +1,6 @@
+var height;
+var width;
+var visited;
 $('#save-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
@@ -38,11 +41,9 @@ $('#save-maze').click(function() {
 		}
 	}
 	var index = 0;
-	var height;
-	var width;
 	height = splitted.length;
 	width = splitted[0].length;
-	var visited = new Array(height);
+	visited = new Array(height);
 	for(var i = 0; i < visited.length; i++) {
 		visited[i] = new Array(width).fill(0);
 	}
