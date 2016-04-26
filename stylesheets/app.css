@@ -18,7 +18,8 @@ body {
 }
 
 .top-bar ul li,
-.top-bar .menu > li > a {
+.top-bar .menu > li > a,
+.footer .menu > li > a {
 	color: #292d35;
 }
 
@@ -27,7 +28,8 @@ body {
 	color: #fefefe;
 }
 
-.top-bar .menu > li > a:hover {
+.top-bar .menu > li > a:hover,
+.footer .menu > li > a:hover {
 	color: #b5b9bd;
 }
 
