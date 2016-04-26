@@ -132,8 +132,9 @@ function dfs(row, col) {
 	//get row number maze-row
 	//get col number maze-cell
 	var calc = ".maze > div:nth-child(" + (row+1) + ") > div:nth-child(" + (col+1) + ")";
-	var blue = $(calc);
-	if (!("white").localeCompare(blue.style.backgroundColor)) {
+	var cell = $(calc);
+	var color = $(calc).css("background-color");
+	if (color === "rgb(255, 255, 255)") {
 		$(blue).css("background-color", "blue");
 	}
 
