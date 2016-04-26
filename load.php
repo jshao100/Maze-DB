@@ -90,6 +90,7 @@ mysqli_close($conn);
 	<div class="row">
 <?php
 echo "<div class='maze medium-centered' style='width:".($scale_factor*$width+4).";'>";
+echo "<div class='solve-image'><a></a></div>";
 $h;
 $w;
 for($h = 0; $h < $height; $h++) {
