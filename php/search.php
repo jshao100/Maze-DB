@@ -12,9 +12,20 @@ if(!conn) {
 }
 
 $searchText = $_POST['search_text'];
-$type = $_POST['search_type'];
+$type = $_POST['search_type']; //on if USER
 $rating = $_POST['rating'];
 $difficulty = $_POST['difficulty'];
+
+if ($searchText == null || $searchText == "") {
+	header('Location: http://maze.bluemix.net/');
+	exit();
+}
+
+if ($type == "on") {
+	$type = "user_handle";
+} else {
+	$type = "maze_name";
+}
 
 echo $searchText."\n";
 echo $type."\n";
