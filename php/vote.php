@@ -17,7 +17,7 @@ $diffVote = $_POST['difficulty'];
 $maze_id = $_POST['id'];
 #get maze id
 //check if vote exists
-$query = "select * from mazes where maze_id = '" . $maze_id . "' and user_id = '" . $user . "'";
+$query = "select * from votes where maze_id = '" . $maze_id . "' and user_id = '" . $user . "'";
 
 $result1 = mysqli_query($conn, $query);
 
