@@ -33,6 +33,8 @@ if ($type == "on") {
 }
 
 $result2 = mysqli_query($conn, $query2);
-
+while($row = mysql_fetch_assoc($result2)) {
+	echo $row['maze_name'] . "\n";
+}
 $mysqli_close($conn);
 ?>
