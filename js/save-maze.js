@@ -64,9 +64,12 @@ $('#save-maze').click(function() {
 				mazename: name,
 				rating: rating,
 				difficulty: difficulty
-			}
+			},
+			success: function(data) {
+				window.location = "http://maze.mybluemix.net/load.php?id=" + data
+			},
+			error: function(xhr, ajaxOptions, thrownerror) { }
 		});
-		window.location = "http://maze.mybluemix.net/";
 	}
 });
 

@@ -4,13 +4,13 @@
 		<section class="main">
 			<div class="row">
 				<div class="title medium-centered medium-6 column">
-					<h2>Get Started</h2>
+					<h2>Start searching mazes.</h2>
 				</div>	
 			</div>
 			<div class="row">
-				<form action="./php/search.php" method="post">
+				<form action="./search.php" method="post">
 					<div class="search medium-centered medium-6 column">
-						<div class="row">
+						<div class="row pad-bot">
 							<div class="medium-9 column search-bar no-padding">
 								<input id="search_field" type="search" placeholder="Search database..." autocomplete="off" name="search_text">
 							</div>
@@ -33,7 +33,7 @@
 									<p>Rating:</p>
 								</div>
 								<div class="small-8 columns">
-									<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
+									<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
 										<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 										<span class="slider-fill" data-slider-fill></span>
 									</div>
@@ -50,7 +50,7 @@
 									<p>Difficulty:</p>
 								</div>
 								<div class="small-8 columns">
-									<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
+									<div class="slider" data-slider data-initial-start="0" data-step="1" data-end="5">
 										<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
 										<span class="slider-fill" data-slider-fill></span>
 									</div>

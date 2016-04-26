@@ -2,8 +2,8 @@
 <html class="no-js" lang="en">
 	<?php include 'header.php'?>
 	<section class="main">
-		<div class="medium-4 medium-centered column">
-			<form>
+		<div class="medium-4 medium-centered column pad-bot">
+			<form class="pad-bot">
 				<div class="row maze-dimension">
 					<input id="width" class="medium-4 column" type="text" placeholder="Width" value="15"/>
 					<p>x</p>
@@ -21,7 +21,7 @@
 					<p>Rating:</p>
 				</div>
 				<div class="small-8 columns">
-					<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
+					<div class="slider" data-slider data-initial-start="2" data-step="1" data-end="5">
 						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 						<span class="slider-fill" data-slider-fill></span>
 					</div>
@@ -37,7 +37,7 @@
 					<p>Difficulty:</p>
 				</div>
 				<div class="small-8 columns">
-					<div class="slider" data-slider data-initial-start="1" data-step="1" data-end="5">
+					<div class="slider" data-slider data-initial-start="2" data-step="1" data-end="5">
 						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
 						<span class="slider-fill" data-slider-fill></span>
 					</div>

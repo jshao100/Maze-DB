@@ -36,8 +36,10 @@
 	display: none;
 }
 
-.maze-subtitle p {
+.maze-subtitle p,
+.maze-subtitle > div a {
 	text-align: center;
+	display: block;
 	font-size: 18px;
 }
 

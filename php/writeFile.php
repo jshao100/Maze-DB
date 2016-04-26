@@ -14,7 +14,7 @@ $db = "ad_e15d55d16dfba74";
 $conn = mysqli_connect($host, $user, $pass, $db, $port);
 
 if(!$conn) {
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+//	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	exit();
 }
 
@@ -46,7 +46,7 @@ foreach ($arr as $value) {
 }
 $str = rtrim($str, "\n");
 
-$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "')";
+$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data, maze_pop) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "','1')";
 
 if(mysqli_query($conn, $query)) {
 	$query = "SELECT maze_id FROM mazes WHERE maze_name = '" . $name . "'";
@@ -66,9 +66,14 @@ if(mysqli_query($conn, $query)) {
 	fwrite($debug, "maze_id is " . $maze_id . "\n");
 	fclose($debug);
 } else {
-	echo "unsuccessful entry into mazes\n";
+	//echo "unsuccessful entry into mazes\n";
 }
 
 mysqli_close($conn);
-header('Location: http://maze.mybluemix.net');
+echo $maze_id;
+exit();
+/*
+$path = 'Location: http://maze.mybluemix.net/load.php?id=' . $maze_id;
+header($path);
+ */
 ?>

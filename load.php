@@ -67,9 +67,9 @@ mysqli_close($conn);
 	</div>
 	<div class="row medium-4 medium-centered maze-subtitle pad-bot">
 		<div class="medium-6 column">
-			<p>
+			<a href='./user.php?handle=<?php echo $author_name;?>'>
 				<?php echo strtolower($author_name);?>
-			</p>
+			</a>
 		</div>
 		<div class="medium-6 column">
 			<p>

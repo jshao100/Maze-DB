@@ -16,16 +16,16 @@
 				<div class="top-bar-left">
 					<ul class="menu">
 						<li class="menu-text">aMAZEing DB</li>
-						<li><a href="./create.php">CREATE</a></li>
-						<li><a href="./index.php">SEARCH</a></li>
-						<li><a href="#">RANDOM</a></li>
+						<li><a class="image create-image" href="./create.php"></a></li>
+						<li><a class="image search-image" href="./index.php"></a></li>
+						<li><a class="image random-image" href="./php/random.php"></a></li>
 					</ul>
 				</div>
 				<div class="top-bar-right">
 					<ul class="menu">
 <?php
 if (isset($_COOKIE["handle"])) {
-	echo "<li><a href='#'>".$_COOKIE["handle"]."'s Mazes</a></li>";
+	echo "<li><a href='./user.php?handle=".$_COOKIE['handle']."'>My Mazes</a></li>";
 	echo "<li><a class='button' href='./php/logout.php'>Logout</a></li>";
 } else {
 	echo '<li><a class="button" href="./login.php">Login/Sign Up</a></li>';
