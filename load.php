@@ -162,7 +162,14 @@ if ($user_diff == null) {
 		</div>
 		<div class="row">
 			<div class="medium-3 medium-centered">
-				<button class="button" type="submit">Submit Vote</button>
+				<button class="button" type="submit">
+<?php
+if ($user_diff == null) {
+	echo "Submit Vote";
+} else {
+	echo "Update Vote";
+}
+?></button>
 			</div>
 		</div>
 	</form>
