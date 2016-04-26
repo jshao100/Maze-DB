@@ -45,7 +45,7 @@ if ($type == "on") {
 	</div>
 	<div>
 		<div class="result-table">
-			<table id="searchTable" class="tablesorter medium-8 medium-centered"> 
+			<table id="searchTable" class="tablesorter medium-8 medium-centered large-6 large-centered"> 
 				<thead> 
 					<tr>
 <?php

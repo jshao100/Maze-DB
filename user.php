@@ -36,7 +36,7 @@ while ($row1 = mysqli_fetch_assoc($result1)) {
 	</div>
 	<div>
 		<div class="result-table">
-			<table id="searchTable" class="tablesorter medium-8 medium-centered"> 
+			<table id="searchTable" class="tablesorter medium-8 medium-centered large-6 large-centered"> 
 				<thead> 
 					<tr> 
 						<th>Maze Name</th> 
