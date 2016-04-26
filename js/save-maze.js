@@ -127,6 +127,7 @@ function isSide(row, col) {
 }
 
 function dfs(row, col) {
+	console.log("dfs call");
 	visited[row][col] = 1;		
 
 	//get row number maze-row
