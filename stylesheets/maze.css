@@ -36,7 +36,8 @@
 	display: none;
 }
 
-.maze-subtitle p {
+.maze-subtitle p,
+.maze-subtitle a {
 	text-align: center;
 	font-size: 18px;
 }
