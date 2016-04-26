@@ -28,6 +28,7 @@ if(mysqli_num_rows($result1) > 0)
 
 
 //insert vote
+echo $query2;
 
 mysqli_query($conn, $query2);
 
