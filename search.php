@@ -23,8 +23,7 @@ echo $difficulty . "\n";
  */
 
 if ($searchText == null || $searchText == "") {
-	header('Location: http://maze.bluemix.net/');
-	exit();
+	$searchText = "";
 }
 $query2 = "";
 $result2 = "";
