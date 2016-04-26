@@ -59,7 +59,6 @@ $('#solve-maze').click(function() {
 	for(var i = 0; i < visited.length; i++) {
 		visited[i] = new Array(width).fill(0);
 	}
-	dfs_color(start[0],start[1]);
 
 	if (complete) {
 		$(".maze").children('.maze-row').each(function() {
@@ -71,6 +70,8 @@ $('#solve-maze').click(function() {
 			});
 		});
 		complete = 0;
+	} else {
+		dfs_color(start[0],start[1]);
 	}
 });
 
