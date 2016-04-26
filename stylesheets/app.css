@@ -73,6 +73,10 @@ body {
 	width: 6rem;
 }
 
+.main .switch .switch-paddle:hover {
+	background-color: #99d3df
+}
+
 .main .switch .switch-paddle .switch-inactive {
 	right: 8%;
 }
