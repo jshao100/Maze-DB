@@ -7,7 +7,7 @@
 	</div>
 	<div>
 		<div class="result-table">
-			<table id="searchTable" class="tablesorter"> 
+			<table id="searchTable" class="tablesorter medium-8 medium-centered"> 
 				<thead> 
 					<tr> 
 						<th>Maze Name</th> 
