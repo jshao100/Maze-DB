@@ -42,6 +42,7 @@ while ($row1 = mysqli_fetch_assoc($result1)) {
 				<tbody>
 <?php
 $query2 = "SELECT * FROM mazes WHERE maze_author = " . $user_id;
+echo $query2;
 $result2 = mysqli_query($query2);
 while($row = mysqli_fetch_assoc($result2)) {
 	echo "<tr>";
