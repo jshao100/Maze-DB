@@ -4,7 +4,7 @@
 		<section class="main">
 			<div class="row">
 				<div class="title medium-centered medium-6 column">
-					<h2>Get Started</h2>
+					<h2>Start searching mazes.</h2>
 				</div>	
 			</div>
 			<div class="row">
