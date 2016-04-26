@@ -19,6 +19,13 @@ $maze_diff = 0;
 
 $query = "SELECT * FROM mazes WHERE maze_id=" . $maze_id;
 $result = mysqli_query($conn, $query);
+
+if (mysqli_num_rows($result) < 1) {
+	mysqli_close($conn);
+	header("Location: http://maze.mybluemix.net/");
+	exit();
+}
+
 while ($row = mysqli_fetch_assoc($result)) {
 	$author_id = $row['maze_author'];
 	$maze_date = $row['maze_date'];

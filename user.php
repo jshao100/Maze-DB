@@ -15,7 +15,14 @@ $handle = $_GET['handle'];
 $user_id = 0;
 
 $query1 = "SELECT user_id FROM users WHERE user_handle = '" .$handle . "'";
+
 $result1 = mysqli_query($conn, $query1);
+
+if (mysqli_num_rows($result1) < 1) {
+	mysqli_close($conn);
+	header("Location: http://maze.mybluemix.net/");
+	exit();
+}
 while ($row1 = mysqli_fetch_assoc($result1)) {
 	$user_id = $row1['user_id'];
 }
