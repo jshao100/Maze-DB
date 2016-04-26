@@ -37,6 +37,17 @@ while ($row = mysqli_fetch_assoc($result1)) {
 	$author_name = $row['user_handle'];
 }
 
+$user_rating = null;
+$user_diff = null;
+if (isset($_COOKIE['uid'])) {
+	$query2 = "SELECT rating, difficulty FROM votes WHERE maze_id=".$maze_id." AND user_id=".$_COOKIE['uid'];
+	$result2 = mysqli_query($conn, $query2);
+	while ($row = mysqli_fetch_assoc($result2)) {
+		$user_rating = $row['rating'];
+		$user_diff = $row['difficulty'];
+	}
+}
+
 $maze_dim = explode("\n", $maze_data);
 $height = sizeof($maze_dim);
 $width = strlen($maze_dim[0]);
@@ -112,7 +123,13 @@ if(!isset($_COOKIE['handle'])) {
 					<p>Rating:</p>
 				</div>
 				<div class="small-8 columns">
-					<div class="slider" data-slider data-initial-start="<?php echo $maze_rating_f;?>" data-step="1" data-end="5">
+					<div class="slider" data-slider data-initial-start="<?php 
+if ($user_rating == null) {	
+	echo $maze_rating_f;
+} else {
+	echo $user_rating;
+}
+?>" data-step="1" data-end="5">
 						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 						<span class="slider-fill" data-slider-fill></span>
 					</div>
@@ -126,7 +143,13 @@ if(!isset($_COOKIE['handle'])) {
 					<p>Difficulty:</p>
 				</div>
 				<div class="small-8 columns">
-					<div class="slider" data-slider data-initial-start="<?php echo $maze_diff_f;?>" data-step="1" data-end="5">
+					<div class="slider" data-slider data-initial-start="<?php
+if ($user_diff == null) {	
+	echo $maze_diff_f;
+} else {
+	echo $user_diff;
+}
+?>" data-step="1" data-end="5">
 						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
 						<span class="slider-fill" data-slider-fill></span>
 					</div>
@@ -139,7 +162,14 @@ if(!isset($_COOKIE['handle'])) {
 		</div>
 		<div class="row">
 			<div class="medium-3 medium-centered">
-				<button class="button" type="submit">Submit Vote</button>
+				<button class="button" type="submit">
+<?php
+if ($user_diff == null) {
+	echo "Submit Vote";
+} else {
+	echo "Update Vote";
+}
+?></button>
 			</div>
 		</div>
 	</form>

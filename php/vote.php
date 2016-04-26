@@ -49,6 +49,9 @@ $query4 = "update mazes set maze_rating=" . $newRate . ", maze_diff = " . $newDi
 mysqli_query($conn, $query4);
 
 mysqli_close($conn);
+
+$path = "../load.php?id=".$maze_id;
+header('Location: ' . $path);
 exit();
 ?>
 
