@@ -49,7 +49,7 @@ $('#save-maze').click(function() {
 		visited[i] = new Array(width).fill(0);
 	}
 	dfs(start[0],start[1]);
-	//alert(visited[end[0]][end[1]]);
+	alert(visited[end[0]][end[1]]);
 	
 	var json_arr = JSON.stringify(array);
 	var name = $('#maze-name').val();
