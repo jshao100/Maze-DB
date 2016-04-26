@@ -37,8 +37,9 @@
 }
 
 .maze-subtitle p,
-.maze-subtitle a {
+.maze-subtitle > div a {
 	text-align: center;
+	display: block;
 	font-size: 18px;
 }
 
