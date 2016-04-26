@@ -144,15 +144,16 @@ function dfs(row, col) {
 		var c = arr[j][1];
 		if(isNumber(r) && isNumber(c)) {
 			if(splitted[r][c] != "X" && visited[r][c] == false) {	
-				sleepFor(1000);	
-				dfs(r, c);
+				sleepFor(1000, r, c);	
 			}
 		}
 	}
 }
 
-function sleepFor(sleepTime) {
+function sleepFor(sleepTime, r, c) {
 	var now = new Date().getTime();
-	while (new Date().getTime() < now + sleepTime) {}
+	while (new Date().getTime() < now + sleepTime) {
+	}
+	dfs(r, c);
 }
 
