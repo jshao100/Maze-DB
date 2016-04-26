@@ -20,21 +20,19 @@ if ($searchText == null || $searchText == "") {
 	header('Location: http://maze.bluemix.net/');
 	exit();
 }
-
+$query2 = "";
 if ($type == "on") {
-	$type = "user_handle";
+	$query = "select user_id from users where user_handle = '" . $searchText . "'";
+	$result = mysqli_query($conn, $query);
+	$row = mysqli_fetch_assoc($result);
+	$uid = $row['user_id'];
+	$query2 = "select * from mazes where maze_author = " . $uid  . "and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
 } else {
-	$type = "maze_name";
+	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
+
 }
 
-echo $searchText."\n";
-echo $type."\n";
-echo $rating."\n";
-echo $difficulty."\n";
-
-$query = "select * from mazes where INSTR(" . $type . ", '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
-
-$result = mysqli_query($conn, $query);
+$result2 = mysqli_query($conn, $query2);
 
 $mysqli_close($conn);
 ?>
