@@ -1,16 +1,31 @@
+.body {
+	background-color: #e9e9e9;
+}
+
 .contain-to-grid {
 	z-index: 100;
 	width: 100%;	
-	position:fixed;
+	//position:fixed;
 }
 
 .top-bar {
-	background-color: #d6d8dd;
+	//background-color: #d6d8dd;
+	background-color: #fefefe;
 }
 
 .top-bar ul {
 	background-color: transparent;
 }
+
+.top-bar ul li,
+.top-bar .menu > li > a {
+	color: #292d35;
+}
+
+.top-bar .menu > li > a:hover {
+	color: #b5b9bd;
+}
+
 
 .footer {
 	bottom: 0;
@@ -33,6 +48,8 @@
 
 .main h2 {
 	text-align: center;
+	color: #545454;
+	font-weight: 500;
 }
 
 .no-padding {
@@ -77,4 +94,8 @@
 	font-size: 12px;
 	top: 22%;
 	left: 36%;
+}
+
+.result-title {
+	margin-bottom: 25px;
 }
