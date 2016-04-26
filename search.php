@@ -86,7 +86,7 @@ if ($type == "on") {
 
 		echo "<tr>";
 		echo "<td><a href='./load.php?id=".$row['maze_id']."'>".$row['maze_name']."</a></td>";
-		echo "<td><a href='./user.php?id=".$author."'>".$author."</td>";
+		echo "<td><a href='./user.php?handle=".$author."'>".$author."</td>";
 		echo "<td>".$row['maze_date']."</td>";
 		echo "<td>".$row['maze_rating']."</td>";
 		echo "<td>".$row['maze_diff']."</td>";

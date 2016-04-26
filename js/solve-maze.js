@@ -2,6 +2,11 @@ var height;
 var width;
 var visited;
 var splitted;
+var end_r;
+var end_c;
+var complete = 0;
+var time = 1000;
+
 $('#solve-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
@@ -36,73 +41,50 @@ $('#solve-maze').click(function() {
 		index = splitted[i].indexOf("E");
 		if(index > -1) {
 			end[0] = i;
+			end_r = i;
 			end[1] = index;
+			end_c = index;
 		}
 	}
 	var index = 0;
 	height = splitted.length;
 	width = splitted[0].length;
+	if (27000/(height*width) > 500) {
+		time = 500;
+	} else {
+		time = 27000/(height*width);
+	}
+
 	visited = new Array(height);
 	for(var i = 0; i < visited.length; i++) {
 		visited[i] = new Array(width).fill(0);
 	}
-	dfs(start[0],start[1]);
+
+	if (complete) {
+		$(".maze").children('.maze-row').each(function() {
+			$(this).children('.maze-cell').each(function() {
+				var colors = $(this).css("background-color");
+				if (colors === "rgb(110, 196, 219)") {
+					$(this).css("background-color","white");
+				}
+			});
+		});
+		complete = 0;
+	} else {
+		dfs_color(start[0],start[1]);
+	}
 });
 
-function getNeighbors(row, col) {
-	var array;
-	var entries = 0;
-	if(isCorner(row, col)) {
-		entries = 2;
-	} else if (isSide(row, col)) {
-		entries = 3;
-	} else {
-		entries = 4;
-	}
-	var array = new Array(entries);
-	for(var i = 0; i < entries; i++) {
-		array[i] = new Array(2);
-	}
-	entries = 0;
-	//try left/
-	if(col > 0 ) {
-		array[entries][0] = row;
-		array[entries][1] = col - 1;
-	} 
-	//try right/ 
-	if (col < width - 1) {
-		entries++;
-		array[entries][0] = row;
-		array[entries][1] = col + 1;
-	} 
-	if(row > 0) {
-		entries++;
-		array[entries][0] = row - 1;
-		array[entries][1] = col;
-	}
-	if(row < height - 1) {
-		entries++;
-		if(!array[entries]) array[entries] = [];
-		array[entries][0] = row + 1;
-		array[entries][1] = col;
-	}
-	return array;
-}
-function isNumber(obj) { return !isNaN(parseFloat(obj)) }
 
-function isCorner(row,col) {
-	return (row == 0 || row == 30) && (col == 0 || col == 30);
-}
-function isSide(row, col) {
-	return (row == 0 || row == 30 || col == 0 || col == 30);
-}
-
-function dfs(row, col) {
+function dfs_color(row, col) {
 	//console.log("dfs call");
 	visited[row][col] = 1;		
 
 	//get row number maze-row
 	//get col number maze-cell
+	if (row == end_r && col == end_c) {
+		complete = 1;
+	}
 
 	var calc = ".maze > div:nth-child(" + (row+2) + ") > div:nth-child(" + (col+1) + ")";
 	var cell = $(calc);
@@ -118,10 +100,10 @@ function dfs(row, col) {
 			var c = arr[j][1];
 			if(isNumber(r) && isNumber(c)) {
 				if(splitted[r][c] != "X" && visited[r][c] == false) {	
-					dfs(r, c);
+					dfs_color(r, c);
 				}
 			}
 		}
-	}, 27000/(height*width));
+	}, time);
 }
 

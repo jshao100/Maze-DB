@@ -8,7 +8,7 @@
 					<form action = "./php/signup.php" method="post" class="medium-8 medium-push-2">
 						<div class="row collapse">
 							<div class="small-12  columns">
-								<input type="text" placeholder="Full Name" name="name">
+								<input type="text" placeholder="Full Name (First Last)" name="name">
 							</div>
 						</div>
 						<div class="row collapse">
@@ -18,7 +18,7 @@
 						</div>
 						<div class="row collapse">
 							<div class="small-12 columns ">
-								<input type="password" placeholder="Password" name="password">
+								<input type="password" placeholder="Password (minimum 8 characters)" name="password">
 							</div>
 						</div>
 						<div class="row collapse">
