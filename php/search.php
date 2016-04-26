@@ -21,18 +21,16 @@ if ($searchText == null || $searchText == "") {
 	exit();
 }
 $query2 = "";
+$result2 = "";
 if ($type == "on") {
-	$query = "select user_id from users where user_handle = '" . $searchText . "'";
-	$result = mysqli_query($conn, $query);
-	$row = mysqli_fetch_assoc($result);
-	$uid = $row['user_id'];
-	$query2 = "select * from mazes where maze_author = " . $uid  . "and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
+	$query2 = "select user_handle from users where INSTR(user_handle, '" .  $searchText "') > 0";
+	$result2 = mysqli_query($conn, $query2);
 } else {
 	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
+	$result2 = mysqli_query($conn, $query2);
 
 }
 
-$result2 = mysqli_query($conn, $query2);
 while($row = mysql_fetch_assoc($result2)) {
 	echo $row['maze_name'] . "\n";
 }
