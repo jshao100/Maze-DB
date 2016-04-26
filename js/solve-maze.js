@@ -104,7 +104,7 @@ function dfs(row, col) {
 	//get row number maze-row
 	//get col number maze-cell
 
-	var calc = ".maze > div:nth-child(" + (row+1) + ") > div:nth-child(" + (col+1) + ")";
+	var calc = ".maze > div:nth-child(" + (row+2) + ") > div:nth-child(" + (col+1) + ")";
 	var cell = $(calc);
 	var color = $(calc).css("background-color");
 	if (color === "rgb(255, 255, 255)") {
@@ -122,6 +122,6 @@ function dfs(row, col) {
 				}
 			}
 		}
-	}, 1000);
+	}, 27000/(height*width));
 }
 
