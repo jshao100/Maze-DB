@@ -12,7 +12,7 @@
 					<div class="search medium-centered medium-6 column">
 						<div class="row pad-bot">
 							<div class="medium-9 column search-bar no-padding">
-								<input id="search_field" type="search" placeholder="Search database..." autocomplete="off" name="search_text">
+								<input id="search_field" type="search" placeholder="Search database... (No entry for all results)" autocomplete="off" name="search_text">
 							</div>
 							<div class="medium-3 column search-button no-padding">
 								<input id="search_button" class="button" type="submit" value="Search">
