@@ -108,7 +108,7 @@ function dfs(row, col) {
 	var cell = $(calc);
 	var color = $(calc).css("background-color");
 	if (color === "rgb(255, 255, 255)") {
-		$(cell).css("background-color", "blue");
+		$(cell).css("background-color", "#6ec4db");
 	}
 
 	setTimeout(function() {
