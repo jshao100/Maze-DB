@@ -19,6 +19,7 @@
 <script src="./js/vendor/foundation.min.js"></script>
 <script src="./js/create-maze.js"></script>
 <script src="./js/save-maze.js"></script>
+<script type="text/javascript" src="./js/tablesorter/jquery.tablesorter.js"></script>
 <script>
 	$(document).foundation();
 </script>
