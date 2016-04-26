@@ -14,7 +14,8 @@ if(!$conn) {
 $handle = $_GET['handle'];
 $user_id = 0;
 
-$query1 = "SELECT user_id FROM users WHERE user_handle = '" . $handle . "'";
+$query1 = "SELECT user_id FROM users WHERE user_handle = " .$handle;
+echo $query1;
 $result1 = mysqli_query($query1);
 while ($row1 = mysqli_fetch_assoc($result1)) {
 	$user_id = $row1['user_id'];
