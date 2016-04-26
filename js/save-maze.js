@@ -145,7 +145,7 @@ function dfs(row, col) {
 		var c = arr[j][1];
 		if(isNumber(r) && isNumber(c)) {
 			if(splitted[r][c] != "X" && visited[r][c] == false) {	
-				setTimeout(function() {dfs(r, c);}, 1000);
+				dfs(r, c);
 			}
 		}
 	}
