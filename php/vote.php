@@ -52,7 +52,7 @@ mysqli_query($conn, $query4);
 mysqli_close($conn);
 
 $path = "../load.php?id=".$maze_id;
-header('Location: ' . $path);
+//header('Location: ' . $path);
 exit();
 ?>
 
