@@ -32,8 +32,6 @@ if ($type == "on") {
 	$row = mysqli_fetch_assoc($result);
 	$uid = $row['user_id'];
 
-	echo "uid: " . $uid . "\n";
-
 	$query2 = "select * from mazes where maze_author = " . $uid  . "and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
 } else {
 	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
@@ -43,7 +41,7 @@ if ($type == "on") {
 echo $query2 . "\n";
 
 $result2 = mysqli_query($conn, $query2);
-while($row = mysql_fetch_assoc($result2)) {
+while($row = mysqli_fetch_assoc($result2)) {
 	echo $row['maze_name'] . "\n";
 }
 
