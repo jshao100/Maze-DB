@@ -16,12 +16,14 @@ $type = $_POST['search_type'];
 $rating = $_POST['rating'];
 $difficulty = $_POST['difficulty'];
 
+echo $searchText."\n";
+echo $type."\n";
+echo $rating."\n";
+echo $difficulty."\n";
 
 $query = "select * from mazes where INSTR(" . $type . ", '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
 
 $result = mysqli_query($conn, $query);
 
-
-
-
-
+$mysqli_close($conn);
+?>

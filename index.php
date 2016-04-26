@@ -8,7 +8,7 @@
 				</div>	
 			</div>
 			<div class="row">
-				<form method="post">
+				<form action="./php/search.php" method="post">
 					<div class="search medium-centered medium-6 column">
 						<div class="row">
 							<div class="medium-9 column search-bar no-padding">
