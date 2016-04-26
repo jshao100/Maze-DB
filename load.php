@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_assoc($result1)) {
 $user_rating = null;
 $user_diff = null;
 if (isset($_COOKIE['uid'])) {
-	$query2 = "SELECT rating, difficulty FROM votes WHERE maze_id=".$maze_id." & user_id=".$_COOKIE['uid'];
+	$query2 = "SELECT rating, difficulty FROM votes WHERE maze_id=".$maze_id." AND user_id=".$_COOKIE['uid'];
 	$result2 = mysqli_query($conn, $query2);
 	while ($row = mysqli_fetch_assoc($result2)) {
 		$user_rating = $row['rating'];
