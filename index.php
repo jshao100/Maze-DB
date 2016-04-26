@@ -10,7 +10,7 @@
 			<div class="row">
 				<form action="./search.php" method="post">
 					<div class="search medium-centered medium-6 column">
-						<div class="row">
+						<div class="row pad-bot">
 							<div class="medium-9 column search-bar no-padding">
 								<input id="search_field" type="search" placeholder="Search database..." autocomplete="off" name="search_text">
 							</div>
