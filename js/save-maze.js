@@ -1,6 +1,7 @@
 var height;
 var width;
 var visited;
+var splitted;
 $('#save-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
@@ -24,7 +25,7 @@ $('#save-maze').click(function() {
 		str2 += (str + "\n");
 	}
 	str2 = str2.substring(0, str2.length - 1);
-	var splitted = str2.split("\n");
+	splitted = str2.split("\n");
 	var start = [0, 0];
 	var end = [0, 0];
 	var index;
