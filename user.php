@@ -1,6 +1,4 @@
 <?php
-$handle = $_GET['handle'];
-
 $host = "us-cdbr-iron-east-03.cleardb.net";
 $port = "3306";
 $user = "b9a1b6108596e9";
@@ -13,13 +11,23 @@ if(!$conn) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-mysqli_close($conn);
+$handle = $_GET['handle'];
+$user_id = 0;
+
+$query1 = "SELECT user_id FROM users WHERE user_handle = '" . $handle . "'";
+$result1 = mysqli_query($query1);
+while ($row1 = mysqli_fetch_assoc($result1)) {
+	$user_id = $row1['user_id'];
+}
+
+$query2 = "SELECT * FROM mazes WHERE maze_author = " . $user_id;
+$result2 = mysqli_query($query2);
 ?>
 <?php include 'header.php';?>
 <section class="main">
 	<div class="row">
 		<div class="result-title">
-			<h2>Search Results for XXX</h2>
+			<h2><?php echo strtolower($handle) . "'s Mazes";?></h2>
 		</div>
 	</div>
 	<div>
@@ -28,7 +36,6 @@ mysqli_close($conn);
 				<thead> 
 					<tr> 
 						<th>Maze Name</th> 
-						<th>Author</th> 
 						<th>Creation Date</th> 
 						<th>Rating</th> 
 						<th>Difficulty</th> 
@@ -36,22 +43,18 @@ mysqli_close($conn);
 					</tr> 
 				</thead> 
 				<tbody>
-					<tr> 
-						<td>Smith</td> 
-						<td>John</td> 
-						<td>jsmith@gmail.com</td> 
-						<td>$50.00</td> 
-						<td>http://www.jsmith.com</td> 
-						<td>Smith</td> 
-					</tr> 
-					<tr> 
-						<td>Test</td> 
-						<td>ayyy</td> 
-						<td>jsmith@gmail.com</td> 
-						<td>$50.00</td> 
-						<td>http://www.jsmith.com</td> 
-						<td>lmao</td> 
-					</tr> 
+<?php
+while($row = mysqli_fetch_assoc($result2)) {
+	echo "<tr>";
+	echo "<td><a href='./load.php?id=".$row['maze_id']."'>".$row['maze_name']."</a></td>";
+	echo "<td>".$row['maze_date']."</td>";
+	echo "<td>".$row['maze_rating']."</td>";
+	echo "<td>".$row['maze_diff']."</td>";
+	echo "<td>".$row['maze_pop']."</td>";
+	echo "</tr>";
+}
+
+?>
 				</tbody>
 			</table>
 		</div>
@@ -59,8 +62,10 @@ mysqli_close($conn);
 </section>
 <?php include 'footer.php';?>
 <script>
-$(document).ready(function() { 
-	$("#searchTable").tablesorter(); 
-});
+	$(document).ready(function() { 
+		$("#searchTable").tablesorter(); 
+	});
 </script>
-
+<?php
+mysqli_close($conn);
+?>
