@@ -134,3 +134,43 @@ body {
 .span-label span {
 	color: #545454
 }
+
+.image {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 25px;
+	margin-right: 5px;
+	margin-left: 5px;	
+}
+
+.search-image {
+	background-image: url('../images/search_dark.png');
+}
+
+.search-image:hover {
+	background-image: url('../images/search_light.png');
+}
+
+.create-image {
+	background-image: url('../images/create_dark.png');
+}
+
+.create-image:hover {
+	background-image: url('../images/create_light.png');
+}
+
+.random-image {
+	background-image: url('../images/dice_dark.png');
+}
+
+.random-image:hover {
+	background-image: url('../images/dice_light.png');
+	transform: rotate(360deg);
+	transition: 1s ease-in-out;
+}
+
+.random-image:active {
+	transform: rotate(15deg);
+	transition: initial;
+}

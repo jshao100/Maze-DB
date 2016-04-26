@@ -16,9 +16,9 @@
 				<div class="top-bar-left">
 					<ul class="menu">
 						<li class="menu-text">aMAZEing DB</li>
-						<li><a href="./create.php">CREATE</a></li>
-						<li><a href="./index.php">SEARCH</a></li>
-						<li><a href="#">RANDOM</a></li>
+						<li><a class="image create-image" href="./create.php"></a></li>
+						<li><a class="image search-image" href="./index.php"></a></li>
+						<li><a class="image random-image" href="#"></a></li>
 					</ul>
 				</div>
 				<div class="top-bar-right">
