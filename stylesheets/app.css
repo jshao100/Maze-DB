@@ -119,9 +119,9 @@ body {
 }
 
 .button {
-	color: #6ec4db;
+	background-color: #6ec4db;
 }
 
 .button:hover {
-	color: #99d3df;
+	background-color: #99d3df;
 }
