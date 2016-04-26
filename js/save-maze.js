@@ -49,7 +49,8 @@ $('#save-maze').click(function() {
 		visited[i] = new Array(width).fill(0);
 	}
 	dfs(start[0],start[1]);
-	alert(visited[end[0]][end[1]]);
+	//alert(visited[end[0]][end[1]]);
+	
 	var json_arr = JSON.stringify(array);
 	var name = $('#maze-name').val();
 	var rating = $('#sliderOutput1').val();
@@ -57,6 +58,8 @@ $('#save-maze').click(function() {
 
 	if (name == null || name == "") {
 		alert("Please enter a name for your maze");
+	} else if (!visited[end[0]][end[1]]) {
+		alert("Maze is not solvable.");	
 	} else {
 		$.ajax({
 				type: 'POST',
@@ -127,17 +130,19 @@ function isSide(row, col) {
 }
 
 function dfs(row, col) {
-	console.log("dfs call");
+	//console.log("dfs call");
 	visited[row][col] = 1;		
 
 	//get row number maze-row
 	//get col number maze-cell
+	/*
 	var calc = ".maze > div:nth-child(" + (row+1) + ") > div:nth-child(" + (col+1) + ")";
 	var cell = $(calc);
 	var color = $(calc).css("background-color");
 	if (color === "rgb(255, 255, 255)") {
 		$(cell).css("background-color", "blue");
 	}
+	*/
 
 	var arr = getNeighbors(row, col);
 	for(var j = 0; j < arr.length; j++) {
