@@ -37,8 +37,8 @@ mysqli_close($conn);
 if($error) {
 	header('Location: ../login.php');
 } else {
-	setcookie("handle", $_POST["handle"], time()+3600, "/"); //set cookie handle
-	setcookie("uid", $user_id, time()+3600, "/");
+	setcookie("handle", $_POST["handle"], time()+3600*3, "/"); //set cookie handle
+	setcookie("uid", $user_id, time()+3600*3, "/");
 	header('Location: ../create.php');
 }
 exit();

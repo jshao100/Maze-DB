@@ -81,8 +81,8 @@ while ($row = mysqli_fetch_assoc($result1)) {
 }
 
 mysqli_close($conn);
-setcookie("handle", $_POST["handle"], time()+3600, "/"); //set cookie handle
-setcookie("uid", $user_id, time()+3600, "/");
+setcookie("handle", $_POST["handle"], time()+3600*3, "/"); //set cookie handle
+setcookie("uid", $user_id, time()+3600*3, "/");
 //echo "cookie pls ";
 //echo $_COOKIE["handle"];
 header('Location: ../index.php');
