@@ -39,7 +39,7 @@ if($error) {
 } else {
 	setcookie("handle", $_POST["handle"], time()+3600*3, "/"); //set cookie handle
 	setcookie("uid", $user_id, time()+3600*3, "/");
-	header('Location: ../create.php');
+	header('Location: ../');
 }
 exit();
 ?>
