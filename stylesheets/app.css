@@ -22,6 +22,11 @@ body {
 	color: #292d35;
 }
 
+.top-bar .menu > li > a.button,
+.top-bar .menu > li > a.button:hover {
+	color: #fefefe;
+}
+
 .top-bar .menu > li > a:hover {
 	color: #b5b9bd;
 }
@@ -61,7 +66,7 @@ body {
 }
 
 .main .switch .switch-paddle {
-	background-color: #2199e8;
+	background-color: #6ec4db;
 	width: 6rem;
 }
 
@@ -73,8 +78,17 @@ body {
 	left: 3.75rem;
 }
 
-.main .slider {
-	background-color: green;
+.main .slider,
+.main .slider .slider-fill {
+	background-color: #b5b9bd;
+}
+
+.main .slider .slider-handle {
+	background-color: #6ec4db;
+}
+
+.main .slider .slider-handle:hover {
+	background-color: #99d3df;
 }
 
 .main .search-options .slider-label {
@@ -83,6 +97,7 @@ body {
 
 .main .search-options .slider-label p {
 	font-size: 20px;	
+	color: #545454;
 }
 
 .main .search-options .span-label {
@@ -98,4 +113,12 @@ body {
 
 .result-title {
 	margin-bottom: 25px;
+}
+
+.button {
+	color: #6ec4db;
+}
+
+.button:hover {
+	color: #99d3df;
 }
