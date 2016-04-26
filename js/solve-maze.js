@@ -49,8 +49,8 @@ $('#solve-maze').click(function() {
 	var index = 0;
 	height = splitted.length;
 	width = splitted[0].length;
-	if (27000/(height*width) > 750) {
-		time = 750;
+	if (27000/(height*width) > 500) {
+		time = 500;
 	} else {
 		time = 27000/(height*width);
 	}
