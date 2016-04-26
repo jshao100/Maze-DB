@@ -2,6 +2,8 @@ var height;
 var width;
 var visited;
 var splitted;
+var time = 1000;
+
 $('#solve-maze').click(function() {
 	var rows = $('.maze').children('.maze-row').each(function() {});
 	var cols;
@@ -42,6 +44,12 @@ $('#solve-maze').click(function() {
 	var index = 0;
 	height = splitted.length;
 	width = splitted[0].length;
+	if (27000/(height*width) > 750) {
+		time = 750;
+	} else {
+		time = 27000/(height*width);
+	}
+
 	visited = new Array(height);
 	for(var i = 0; i < visited.length; i++) {
 		visited[i] = new Array(width).fill(0);
@@ -75,6 +83,6 @@ function dfs_color(row, col) {
 				}
 			}
 		}
-	}, 27000/(height*width));
+	}, time);
 }
 
