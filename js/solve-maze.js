@@ -1,4 +1,7 @@
 var height;
+var complete = 0;
+var end_r;
+var end_c;
 var width;
 var visited;
 var splitted;
@@ -38,7 +41,9 @@ $('#solve-maze').click(function() {
 		index = splitted[i].indexOf("E");
 		if(index > -1) {
 			end[0] = i;
+			end_r = i;
 			end[1] = index;
+			end_c = index;
 		}
 	}
 	var index = 0;
@@ -55,6 +60,18 @@ $('#solve-maze').click(function() {
 		visited[i] = new Array(width).fill(0);
 	}
 	dfs_color(start[0],start[1]);
+
+	if (complete) {
+		$(".maze").children('.maze-row').each(function() {
+			$(this).children('.maze-cell').each(function() {
+				var colors = $(this).css("background-color");
+				if (colors === "rgb(110, 196, 219)") {
+					$(this).css("background-color","white");
+				}
+			});
+		});
+		complete = 0;
+	}
 });
 
 
@@ -64,6 +81,9 @@ function dfs_color(row, col) {
 
 	//get row number maze-row
 	//get col number maze-cell
+	if (row == end_r && col == end_c) {
+		complete = 1;
+	}
 
 	var calc = ".maze > div:nth-child(" + (row+2) + ") > div:nth-child(" + (col+1) + ")";
 	var cell = $(calc);
