@@ -33,7 +33,7 @@ if ($type == "on") {
 	$result2 = mysqli_query($conn, $query2);
 
 } else {
-	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
+	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') > 0 and maze_rating >= " . $rating . " and maze_diff >= " . $difficulty;
 	$result2 = mysqli_query($conn, $query2);
 }
 ?>
