@@ -28,13 +28,12 @@ if ($searchText == null || $searchText == "") {
 $query2 = "";
 $result2 = "";
 if ($type == "on") {
-	$query2 = "select user_handle from users where INSTR(user_handle, '" .  $searchText "') > 0";
+	$query2 = "select user_handle from users where INSTR(user_handle, '" . $searchText . "') > 0";
 	$result2 = mysqli_query($conn, $query2);
 
 } else {
 	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
 	$result2 = mysqli_query($conn, $query2);
-
 }
 
 echo $query2 . "\n";
