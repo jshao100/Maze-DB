@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 		<?php include 'header.php'?>
 		<section class="main">
-			<div class="medium-6 column">
+			<div class="medium-6 large-4 large-push-2 column">
 				<div class="signup-panel">
 					<p class="welcome">Hello, new user!</p>
 					<form action = "./php/signup.php" method="post" class="medium-8 medium-push-2">
@@ -30,7 +30,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="medium-6 column">
+			<div class="medium-6 large-4 large-pull-2 column">
 				<div class="signup-panel">
 					<p class="welcome">Welcome back!</p>
 					<form action="./php/login.php" method="post" class="medium-8 medium-push-2">
