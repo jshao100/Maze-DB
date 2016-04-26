@@ -72,7 +72,7 @@ if ($type == "on") {
 		echo "<tr>";
 		echo "<td>".$row['user_first']."</td>";
 		echo "<td>".$row['user_last']."</td>";
-		echo "<td>".$row['user_handle']."</td>";
+		echo "<td><a href='./user.php?id=".$row['user_id']."'>".$row['user_handle']."</a></td>";
 		echo "</tr>";
 	}
 
@@ -86,8 +86,8 @@ if ($type == "on") {
 		}
 
 		echo "<tr>";
-		echo "<td>".$row['maze_name']."</td>";
-		echo "<td>".$author."</td>";
+		echo "<td><a href='./load.php?id=".$row['maze_id']."'>".$row['maze_name']."</a></td>";
+		echo "<td><a href='./user.php?id=".$row['maze_author']."'>".$author."</td>";
 		echo "<td>".$row['maze_date']."</td>";
 		echo "<td>".$row['maze_rating']."</td>";
 		echo "<td>".$row['maze_diff']."</td>";
