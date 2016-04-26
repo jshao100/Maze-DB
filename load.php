@@ -77,12 +77,12 @@ $scale_factor = floor($scale_factor);
 		</div>
 		<div class="medium-6 column">
 			<p>
-				Rating: <b><?php echo $maze_rating;?></b>
+				Rating: <b><?php echo number_format($maze_rating, 1);?></b>
 			</p>
 		</div>
 		<div class="medium-6 column">
 			<p>
-				Difficulty: <b><?php echo $maze_diff;?></b>
+				Difficulty: <b><?php echo number_format($maze_diff, 1);?></b>
 			</p>
 		</div>
 	</div>
