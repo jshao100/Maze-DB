@@ -24,7 +24,7 @@ $result1 = mysqli_query($conn, $query);
 $query2 = "INSERT INTO votes(maze_id, user_id, rating, difficulty) values(" . $maze_id . ", " . $_COOKIE['uid'] . ", " . $ratingVote . ", " . $diffVote . ")";
 
 if(mysqli_num_rows($result1) > 0) 
-	$query2 = "UPDATE votes set rating = " . $ratingVote . ", difficulty= " . $diffVote . "where maze_id = " . $maze_id . " and user_id = " . $user;
+	$query2 = "UPDATE votes set rating = " . $ratingVote . ", difficulty= " . $diffVote . " where maze_id = " . $maze_id . " and user_id = " . $user;
 
 
 //insert vote
