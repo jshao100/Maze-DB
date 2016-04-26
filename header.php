@@ -18,7 +18,7 @@
 						<li class="menu-text">aMAZEing DB</li>
 						<li><a class="image create-image" href="./create.php"></a></li>
 						<li><a class="image search-image" href="./index.php"></a></li>
-						<li><a class="image random-image" href="#"></a></li>
+						<li><a class="image random-image" href="./php/random.php"></a></li>
 					</ul>
 				</div>
 				<div class="top-bar-right">
