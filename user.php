@@ -27,6 +27,14 @@
 						<td>http://www.jsmith.com</td> 
 						<td>Smith</td> 
 					</tr> 
+					<tr> 
+						<td>Test</td> 
+						<td>ayyy</td> 
+						<td>jsmith@gmail.com</td> 
+						<td>$50.00</td> 
+						<td>http://www.jsmith.com</td> 
+						<td>lmao</td> 
+					</tr> 
 				</tbody>
 			</table>
 		</div>
@@ -34,8 +42,8 @@
 </section>
 <?php include 'footer.php';?>
 <script>
-	$(document).ready(function() { 
-		$("#searchTable").tablesorter(); 
-	}); 
+$(document).ready(function() { 
+	$("#searchTable").tablesorter(); 
+});
 </script>
 
