@@ -1,3 +1,20 @@
+<?php
+$handle = $_GET['handle'];
+
+$host = "us-cdbr-iron-east-03.cleardb.net";
+$port = "3306";
+$user = "b9a1b6108596e9";
+$pass = "cedf8312";
+$db = "ad_e15d55d16dfba74";
+
+$conn = mysqli_connect($host, $user, $pass, $db, $port);
+
+if(!$conn) {
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+mysqli_close($conn);
+?>
 <?php include 'header.php';?>
 <section class="main">
 	<div class="row">

@@ -25,7 +25,7 @@
 					<ul class="menu">
 <?php
 if (isset($_COOKIE["handle"])) {
-	echo "<li><a href='".$_COOKIE['uid']."'>My Mazes</a></li>";
+	echo "<li><a href='./user.php?handle=".$_COOKIE['handle']."'>My Mazes</a></li>";
 	echo "<li><a class='button' href='./php/logout.php'>Logout</a></li>";
 } else {
 	echo '<li><a class="button" href="./login.php">Login/Sign Up</a></li>';
