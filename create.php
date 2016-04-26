@@ -2,8 +2,8 @@
 <html class="no-js" lang="en">
 	<?php include 'header.php'?>
 	<section class="main">
-		<div class="medium-4 medium-centered column">
-			<form>
+		<div class="medium-4 medium-centered column pad-bot">
+			<form class="pad-bot">
 				<div class="row maze-dimension">
 					<input id="width" class="medium-4 column" type="text" placeholder="Width" value="15"/>
 					<p>x</p>
