@@ -59,18 +59,18 @@ $('#save-maze').click(function() {
 		alert("Please enter a name for your maze");
 	} else {
 		$.ajax({
-			type: 'POST',
-			url: '../php/writeFile.php',
-			data: {
-				saveData: json_arr,
-				mazename: name,
-				rating: rating,
-				difficulty: difficulty
-			},
-			success: function(data) {
-				window.location = "http://maze.mybluemix.net/load.php?id=" + data
-			},
-			error: function(xhr, ajaxOptions, thrownerror) { }
+				type: 'POST',
+				url: '../php/writeFile.php',
+				data: {
+					saveData: json_arr,
+					mazename: name,
+					rating: rating,
+					difficulty: difficulty
+				},
+				success: function(data) {
+					window.location = "http://maze.mybluemix.net/load.php?id=" + data
+				},
+				error: function(xhr, ajaxOptions, thrownerror) { }
 		});
 	}
 });
@@ -127,16 +127,25 @@ function isSide(row, col) {
 }
 
 function dfs(row, col) {
-	visited[row][col] = 1;
+	visited[row][col] = 1;		
+
+	//get row number maze-row
+	//get col number maze-cell
+	var calc = ".maze > div:nth-child(" + (row+1) + ") > div:nth-child(" + (col+1) + ")";
+	var blue = $(calc);
+	if (!("white").localeCompare(blue.style.backgroundColor)) {
+		$(blue).css("background-color", "blue");
+	}
+
 	var arr = getNeighbors(row, col);
 	for(var j = 0; j < arr.length; j++) {
 		var r = arr[j][0];
 		var c = arr[j][1];
 		if(isNumber(r) && isNumber(c)) {
-
-			if(splitted[r][c] != "X" && visited[r][c] == false) {				dfs(r, c);
+			if(splitted[r][c] != "X" && visited[r][c] == false) {	
+				setTimeout(dfs(r, c), 1000);
 			}
 		}
 	}
-}
+	}
 
