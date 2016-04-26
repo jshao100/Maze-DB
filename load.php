@@ -57,6 +57,7 @@ if ($height > $width)	$scale_factor = 600/$height;
 else							$scale_factor = 600/$width;
 $scale_factor = floor($scale_factor);
 
+mysqli_close($conn);
 ?>
 <section class="main">
 	<div class="row medium-4 medium-centered maze-title">

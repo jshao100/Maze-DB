@@ -16,6 +16,11 @@ $type = $_POST['search_type']; //on if USER
 $rating = $_POST['rating'];
 $difficulty = $_POST['difficulty'];
 
+echo $searchText . "\n";
+echo $type . "\n";
+echo $rating . "\n";
+echo $difficulty . "\n";
+
 if ($searchText == null || $searchText == "") {
 	header('Location: http://maze.bluemix.net/');
 	exit();
@@ -25,15 +30,19 @@ $result2 = "";
 if ($type == "on") {
 	$query2 = "select user_handle from users where INSTR(user_handle, '" .  $searchText "') > 0";
 	$result2 = mysqli_query($conn, $query2);
+
 } else {
 	$query2 = "select * from mazes where INSTR(maze_name, '" . $searchText . "') and maze_rating > " . $rating . " and maze_diff > " . $difficulty;
 	$result2 = mysqli_query($conn, $query2);
 
 }
 
-while($row = mysql_fetch_assoc($result2)) {
+echo $query2 . "\n";
+
+while($row = mysqli_fetch_assoc($result2)) {
 	echo $row['maze_name'] . "\n";
 }
+
 $mysqli_close($conn);
 exit();
 ?>
