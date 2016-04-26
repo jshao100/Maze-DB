@@ -19,6 +19,7 @@ body {
 
 .top-bar ul li,
 .top-bar .menu > li > a,
+.footer ul li,
 .footer .menu > li > a {
 	color: #292d35;
 }
