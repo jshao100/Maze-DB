@@ -46,7 +46,7 @@ foreach ($arr as $value) {
 }
 $str = rtrim($str, "\n");
 
-$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "')";
+$query = "INSERT INTO mazes (maze_name, maze_author, maze_rating, maze_diff, maze_data, maze_pop) VALUES ('" . $name . "','" . $user_id . "','" . $rating . "','" . $difficulty . "','" . $str . "','1')";
 
 if(mysqli_query($conn, $query)) {
 	$query = "SELECT maze_id FROM mazes WHERE maze_name = '" . $name . "'";
