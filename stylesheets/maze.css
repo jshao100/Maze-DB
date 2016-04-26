@@ -59,9 +59,9 @@
 .solve-image {
 	position: absolute;
 	right: 10px;
-	top: -35px;
-	width: 32px;
-	height: 32px;
+	top: -20px;
+	width: 16px;
+	height: 16px;
 	display: block;	
 }
 
@@ -71,6 +71,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	display: block;
-	height: 32px;
-	width: 32px;
+	height: 16px;
+	width: 16px;
 }
