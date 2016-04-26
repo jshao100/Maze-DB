@@ -1,10 +1,10 @@
 var height;
-var complete = 0;
-var end_r;
-var end_c;
 var width;
 var visited;
 var splitted;
+var end_r;
+var end_c;
+var complete = 0;
 var time = 1000;
 
 $('#solve-maze').click(function() {
