@@ -19,9 +19,6 @@ $result1 = mysqli_query($query1);
 while ($row1 = mysqli_fetch_assoc($result1)) {
 	$user_id = $row1['user_id'];
 }
-
-$query2 = "SELECT * FROM mazes WHERE maze_author = " . $user_id;
-$result2 = mysqli_query($query2);
 ?>
 <?php include 'header.php';?>
 <section class="main">
@@ -44,6 +41,8 @@ $result2 = mysqli_query($query2);
 				</thead> 
 				<tbody>
 <?php
+$query2 = "SELECT * FROM mazes WHERE maze_author = " . $user_id;
+$result2 = mysqli_query($query2);
 while($row = mysqli_fetch_assoc($result2)) {
 	echo "<tr>";
 	echo "<td><a href='./load.php?id=".$row['maze_id']."'>".$row['maze_name']."</a></td>";
